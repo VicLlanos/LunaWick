@@ -1,0 +1,22 @@
+/* css/style.css */
+:root{--cream:#F7F3EC;--ink:#29231E;--terra:#946B4B;--sage:#737D68;--line:#E5DACE;--muted:#82796F;--white:#FFFEFC;--shadow:0 18px 48px rgba(50,36,23,.075);--espresso:#302820}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#FBF9F5 0%,#F7F3EC 45%,#F9F6F0 100%);color:var(--ink);font-family:Inter,system-ui,sans-serif}
+h1,h2,h3,h4,.serif,.navbar-brand{font-family:"Playfair Display",Georgia,serif}
+.navbar{background:rgba(251,249,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(190,169,143,.35)}
+.brand-mark{width:38px;height:38px;background:var(--espresso);color:#E9D9B9;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:"Playfair Display",Georgia,serif}
+.eyebrow{color:#8E7656;letter-spacing:.19em;font-size:.68rem;font-weight:700}
+.surface{background:rgba(255,254,252,.92);border:1px solid #E8DFD3;border-radius:7px;box-shadow:0 10px 32px rgba(55,39,25,.045);padding:1.25rem}
+.hero{padding:4.5rem 0}
+.product-art{min-height:220px;border-radius:8px;background:radial-gradient(ellipse at 50% 45%,#F5E9D6 0%,#E8D8C3 44%,#D5C0A5 100%)}
+.candle{width:120px;height:160px;border-radius:12px;margin:20px auto;background:linear-gradient(90deg,#4C392B 0%,#7E6045 18%,#B18A60 43%,#8B6849 72%,#59402F 100%);box-shadow:inset 5px 0 14px rgba(255,255,255,.05)}
+.btn-terra{background:var(--espresso);border-color:var(--espresso);color:#F8F0E4}
+.btn-outline-terra{border:1px solid #B6A28B;color:var(--espresso);background:rgba(255,254,252,.45)}
+.option-card{padding:1rem;border:1px solid #E4D9CA;border-radius:6px;background:#FFFEFC;cursor:pointer}
+.option-card.selected{border:1px solid #8B765B;background:#F5EFE6}
+.summary-line{font-size:.9rem;padding:.35rem 0}
+.summary-total{font-size:1.4rem}
+.gallery-card{position:relative;overflow:hidden;border-radius:14px;background:#eee5d8;border:1px solid var(--line);min-height:230px}
+.gallery-card img{display:block;width:100%;height:220px;object-fit:cover}
+.gallery-placeholder{min-height:220px;display:flex;align-items:center;justify-content:center;color:#8b7a67}
+.small-muted{color:#7f7466}
+@media(max-width:767px){.hero{padding:2.8rem 0}.product-art{min-height:160px}}

@@ -1,376 +1,98 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#FAF8F5">
-<title>Luna Wick Co. — Candle Studio & Wholesale</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-:root{--cream:#FAF8F5;--ink:#1C1C1C;--terra:#C07A60;--sage:#7A8B7B;--line:#E6DFD3;--muted:#77736d;--white:#fff;--shadow:0 14px 40px #33251a0d}
-*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,sans-serif}h1,h2,h3,h4,.serif,.navbar-brand{font-family:"Playfair Display",Georgia,serif}a{color:var(--terra)}.navbar{background:#fff;border-bottom:1px solid var(--line)}.navbar-brand{font-size:1.55rem;font-weight:600;letter-spacing:.01em}.brand-mark{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50% 50% 48% 12%;background:var(--terra);color:white;font-family:Inter;font-size:17px;margin-right:9px;transform:rotate(-8deg)}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--sage)}.hero{padding:4.5rem 0 3.5rem;background:radial-gradient(ellipse at 85% 15%,#e9d8ca77,transparent 35%),var(--cream)}.hero h1{font-size:clamp(2.6rem,5vw,4.7rem);line-height:1.06;letter-spacing:-.04em}.hero p{max-width:570px;color:var(--muted);font-size:1.05rem;line-height:1.8}.btn-terra{background:var(--terra);border:1px solid var(--terra);color:#fff}.btn-terra:hover{background:#a9664f;border-color:#a9664f;color:white}.btn-outline-terra{border:1px solid var(--terra);color:var(--ink)}.btn-outline-terra:hover,.btn-outline-terra.active{background:var(--terra);color:#fff}.text-terra{color:var(--terra)!important}.text-sage{color:var(--sage)!important}.surface,.card-custom{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.surface{padding:clamp(1.15rem,3vw,2rem)}.product-art{min-height:205px;border-radius:14px;background:linear-gradient(145deg,#f0e5d7,#e2d0bd);display:grid;place-items:center;overflow:hidden;position:relative}.product-art:before{content:"";position:absolute;width:145px;height:145px;border-radius:50%;background:#fff5;top:-35px;right:-25px}.candle{position:relative;width:88px;height:116px;border-radius:13px 13px 20px 20px;background:linear-gradient(90deg,#79543b,#bd8b5f 35%,#8c6246);box-shadow:inset 8px 0 12px #fff3,inset -8px 0 12px #34201233,0 18px 20px #3d2a1b26}.candle:before{content:"";position:absolute;top:-6px;left:10px;right:10px;height:14px;border-radius:50%;background:#f4e6cc;border:2px solid #8d6a4c}.candle:after{content:"";position:absolute;top:-26px;left:42px;width:5px;height:23px;background:#4a3529;border-radius:100% 0 100% 0;transform:rotate(8deg)}.candle-label{position:absolute;top:43px;left:8px;right:8px;text-align:center;background:#f8f0e2;color:#624b3c;padding:7px 2px;font-family:"Playfair Display";font-size:11px}.field-label{font-size:.83rem;font-weight:600;margin-bottom:.45rem}.form-control,.form-select{border-color:var(--line);border-radius:10px;padding:.72rem .85rem;background-color:#fff}.form-control:focus,.form-select:focus{border-color:var(--terra);box-shadow:0 0 0 .2rem #c07a6022}.option-card{height:100%;padding:1rem;border:1px solid var(--line);border-radius:13px;background:white;cursor:pointer;transition:.18s ease}.option-card:hover{transform:translateY(-2px);border-color:var(--terra)}.option-card.selected{border:2px solid var(--terra);background:#fdf7f3}.step-panel{display:none;animation:rise .24s ease}.step-panel.active{display:block}@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.price-tier{font:inherit;color:inherit;cursor:pointer;border:1px solid var(--line);border-radius:12px;padding:1rem .6rem;text-align:center;background:white;transition:.18s ease}.price-tier:hover{border-color:var(--sage);transform:translateY(-2px)}.price-tier.active{border:2px solid var(--sage);background:#f5f7f4}.summary-line{display:flex;justify-content:space-between;gap:1rem;margin:.8rem 0;font-size:.9rem}.summary-line span:first-child{color:var(--muted)}.summary-total{font-size:1.65rem;font-family:"Playfair Display",serif}.badge-sage{background:#e6eee6;color:#3f6145}.view{display:none;animation:rise .25s ease}.view.active{display:block}.status-step{display:flex;gap:12px;position:relative;padding-bottom:1.3rem}.status-dot{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#eee8df;color:#6e655b;flex:0 0 25px;font-size:.75rem;z-index:1}.status-step.done .status-dot,.status-step.current .status-dot{background:var(--sage);color:white}.status-step:not(:last-child):after{content:"";position:absolute;left:12px;top:25px;height:calc(100% - 22px);border-left:2px solid var(--line)}.status-step.done:not(:last-child):after{border-color:var(--sage)}.status-name{font-weight:600}.table>:not(caption)>*>*{padding:.85rem .75rem;border-bottom-color:var(--line)}.table thead th{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;white-space:nowrap}.pill{border-radius:999px;padding:.35rem .65rem;font-size:.75rem;font-weight:600;background:#f1eee8}.auth-shell{max-width:980px;margin:0 auto}.auth-panel{min-height:100%;padding:2rem;background:#efe4d8;border-radius:16px}.notice{border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;background:#fff}.small-muted{font-size:.83rem;color:var(--muted)}footer{border-top:1px solid var(--line);background:white}.nav-link{cursor:pointer}.loading{opacity:.65;pointer-events:none}.hidden{display:none!important}.toast-container{z-index:1090}@media(max-width:767px){.hero{padding:3rem 0 2.5rem}.hero h1{font-size:2.7rem}.table-responsive{font-size:.88rem}.auth-panel{margin-bottom:1rem}} 
-/* Luna Wick Co. — premium editorial design layer */
-:root{
- --cream:#F7F3EC;--ink:#29231E;--terra:#946B4B;--sage:#737D68;--line:#E5DACE;--muted:#82796F;--white:#FFFEFC;
- --shadow:0 18px 48px rgba(50,36,23,.075);
- --gold:#B79A6A;--espresso:#302820;--soft:#EEE5D8;
-}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{background:linear-gradient(180deg,#FBF9F5 0%,#F7F3EC 45%,#F9F6F0 100%);color:var(--ink);letter-spacing:-.012em}
-h1,h2,h3,h4,.serif,.navbar-brand{font-family:"Playfair Display",Georgia,serif;font-weight:500;letter-spacing:-.025em}
-p{line-height:1.8}
-.navbar{background:rgba(251,249,245,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid rgba(190,169,143,.35);box-shadow:0 4px 24px rgba(54,40,27,.025)}
-.navbar .container{min-height:76px}
-.navbar-brand{font-size:1.5rem;line-height:1.05;color:var(--espresso)}
-.brand-mark{width:38px;height:38px;background:var(--espresso);color:#E9D9B9;border-radius:50%;transform:none;box-shadow:0 4px 12px #30282022;font-family:"Playfair Display",Georgia,serif;font-size:21px}
-.nav-link{font-size:.86rem!important;font-weight:500;color:#5f574e!important;padding:.65rem .8rem!important;transition:color .2s ease}
-.nav-link:hover,.nav-link:focus{color:var(--terra)!important}
-.navbar .btn-outline-terra{border-radius:999px;padding:.55rem 1.1rem}
-.eyebrow{color:#8E7656;letter-spacing:.19em;font-size:.68rem;font-weight:700}
-.hero{position:relative;overflow:hidden;padding:5.4rem 0 4.6rem;background:radial-gradient(ellipse at 78% 34%,rgba(208,184,151,.23),transparent 38%),radial-gradient(ellipse at 8% 90%,rgba(183,154,106,.08),transparent 34%),linear-gradient(120deg,#FBF9F5,#F2E9DC)}
-.hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:radial-gradient(#9b806055 .55px,transparent .55px);background-size:7px 7px;mask-image:linear-gradient(90deg,transparent,#000 55%,#000)}
-.hero>.container{position:relative;z-index:1}
-.hero h1{font-size:clamp(3.2rem,6.1vw,5.6rem);line-height:1.02;letter-spacing:-.055em;max-width:760px}
-.hero h1 .text-terra{color:#886747!important;font-style:italic;font-weight:400}
-.hero p{max-width:560px;color:#756b60;font-size:1rem;line-height:1.95}
-.hero .surface{padding:12px!important;border-radius:5px;background:#FFFEFC;border:1px solid #E6DCCF;box-shadow:0 28px 70px rgba(55,39,25,.14),0 3px 10px rgba(55,39,25,.04);transform:rotate(.5deg);transition:transform .35s ease,box-shadow .35s ease}
-.hero .surface:hover{transform:rotate(0) translateY(-4px);box-shadow:0 34px 80px rgba(55,39,25,.17)}
-.product-art{min-height:225px!important;border-radius:3px;background:radial-gradient(ellipse at 50% 45%,#F5E9D6 0%,#E8D8C3 44%,#D5C0A5 100%);position:relative}
-.product-art:before{width:220px;height:220px;top:-80px;right:-70px;background:rgba(255,251,242,.25);border:1px solid rgba(255,255,255,.3)}
-.product-art:after{content:"";position:absolute;bottom:18px;left:16%;right:16%;height:24px;border-radius:50%;background:#6A4D3220;filter:blur(13px)}
-.candle{z-index:1;width:98px;height:132px;border-radius:9px 9px 16px 16px;background:linear-gradient(90deg,#4C392B 0%,#7E6045 18%,#B18A60 43%,#8B6849 72%,#59402F 100%);box-shadow:inset 5px 0 10px #fff2,inset -8px 0 14px #1c100c4a,0 22px 25px #3d2a1b2d}
-.candle:before{top:-5px;left:8px;right:8px;height:13px;background:radial-gradient(ellipse at center,#F8EEDC 0%,#D8C5A8 100%);border:1px solid #8D7052}
-.candle:after{left:47px;background:#39271d}
-.candle-label{top:48px;left:7px;right:7px;padding:9px 2px 7px;background:#F4EBDD;color:#4D3D2E;border-top:1px solid #C9B89B;border-bottom:1px solid #C9B89B;letter-spacing:.05em;line-height:1.25}
-.hero .pill{background:#F3EDE3;color:#7B6247;border:1px solid #E5D7C4;font-size:.69rem;letter-spacing:.04em;text-transform:uppercase}
-.btn{font-weight:600;letter-spacing:.005em;transition:transform .2s ease,box-shadow .2s ease,background .2s ease;border-radius:4px}
-.btn:hover{transform:translateY(-1px)}
-.btn-lg{font-size:.9rem;padding:.9rem 1.4rem!important}
-.btn-terra{background:var(--espresso);border-color:var(--espresso);color:#F8F0E4;box-shadow:0 7px 18px rgba(48,40,32,.13)}
-.btn-terra:hover,.btn-terra:focus{background:#4A3C2E;border-color:#4A3C2E;color:#fff;box-shadow:0 10px 24px rgba(48,40,32,.18)}
-.btn-outline-terra{border:1px solid #B6A28B;color:var(--espresso);background:rgba(255,254,252,.45)}
-.btn-outline-terra:hover,.btn-outline-terra.active{background:#EEE5D8;border-color:#B6A28B;color:var(--espresso)}
-.btn-link{color:#8A6A4A!important}
-.text-terra{color:#886747!important}.text-sage{color:#737D68!important}
-.container> .row.g-4.mb-5{margin-bottom:4.5rem!important}
-.surface,.card-custom{background:rgba(255,254,252,.92);border:1px solid #E8DFD3;border-radius:7px;box-shadow:0 10px 32px rgba(55,39,25,.045);transition:border-color .25s ease,box-shadow .25s ease}
-.surface{padding:clamp(1.25rem,3vw,2rem)}
-.surface:hover{border-color:#D7C7B2;box-shadow:0 16px 38px rgba(55,39,25,.065)}
-#view-marketplace>.container{padding-top:4rem!important;padding-bottom:4rem!important}
-#view-marketplace h2{font-size:clamp(1.8rem,3vw,2.55rem)}
-#view-marketplace h3{color:#3C332A}
-#view-marketplace .row.g-4.mb-5 .surface{padding:1.7rem!important;min-height:185px}
-#view-marketplace .row.g-4.mb-5 .eyebrow{font-size:.64rem}
-.price-tier{min-height:150px;padding:1.25rem .8rem;background:#FFFEFC;border:1px solid #E3D8C9;border-radius:5px;box-shadow:0 4px 12px rgba(45,33,22,.025);position:relative;overflow:hidden}
-.price-tier:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:transparent;transition:background .2s ease}
-.price-tier:hover{border-color:#BDA98F;transform:translateY(-3px);box-shadow:0 12px 24px rgba(45,33,22,.07)}
-.price-tier.active{border:1px solid #8B765B;background:#F4EEE5;box-shadow:inset 0 0 0 1px #8B765B22}
-.price-tier.active:before{background:#8B765B}
-.price-tier .fs-3{font-size:2rem!important;color:#3A3026}
-.price-tier .small-muted{letter-spacing:.06em;text-transform:uppercase;font-size:.67rem}
-.badge-sage{display:inline-block;margin-top:.35rem;padding:.38rem .65rem;background:#E9E8DD;color:#5C644D;font-size:.68rem;font-weight:600;border-radius:2px}
-#customizer{scroll-margin-top:100px}
-#customizer>.col-lg-8>.surface,#customizer>.col-lg-4>.surface{border-radius:7px}
-.option-card{padding:1.15rem;border:1px solid #E4D9CA;border-radius:5px;background:#FFFEFC;transition:all .22s ease}
-.option-card:hover{transform:translateY(-2px);border-color:#B69A78;box-shadow:0 8px 20px #49321b0d}
-.option-card.selected{border:1px solid #8B765B;background:#F5EFE6;box-shadow:inset 0 0 0 1px #8B765B24}
-.field-label{font-size:.76rem;font-weight:700;letter-spacing:.015em;color:#55493D}
-.form-control,.form-select{border-color:#DED3C4;border-radius:4px;padding:.78rem .9rem;background-color:#FFFEFC;color:#332B24}
-.form-control:focus,.form-select:focus{border-color:#9C805E;box-shadow:0 0 0 .2rem rgba(156,128,94,.14)}
-.form-control::placeholder{color:#B2A79A}
-.summary-line{font-size:.88rem;padding-bottom:.25rem}
-.summary-total{font-size:2rem;color:#382E24}
-.notice{border:1px solid #E5D8C6;border-radius:4px;padding:1rem;background:#F7F2E9;color:#625547}
-.pill{border-radius:3px;padding:.4rem .7rem;font-size:.7rem;font-weight:700;letter-spacing:.04em;background:#F0E8DC;color:#796247}
-.view{animation:premiumReveal .3s ease}
-@keyframes premiumReveal{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
-.auth-panel{background:linear-gradient(145deg,#EDE1D1,#E3D2BD);border-radius:4px;padding:2rem}
-.auth-shell .surface{border-radius:7px}
-.status-dot{background:#EDE5D9;color:#776957}.status-step.done .status-dot,.status-step.current .status-dot{background:#777D67}
-.table>:not(caption)>*>*{padding:1rem .8rem;border-bottom-color:#E8DFD3}
-.table thead th{color:#8B7A67;font-size:.66rem;letter-spacing:.1em}
-.modal-content{background:#FBF8F2!important;border-radius:7px!important;border:1px solid #DED0BD!important;box-shadow:0 28px 80px rgba(32,24,16,.2)}
-.modal-header,.modal-footer{border-color:#E7DCCF}
-.modal-title{color:#3C3025}
-.accordion-item{background:#FFFEFC;border-color:#E7DCCF}
-.accordion-button{background:#F7F1E8;color:#3B3127;font-weight:600;box-shadow:none!important}
-.accordion-button:not(.collapsed){background:#EEE4D6;color:#6F5438}
-.accordion-body{color:#74695D;line-height:1.8}
-footer{border-top:1px solid #E4D9CA;background:#F3EDE4!important;padding-top:2rem!important;padding-bottom:2rem!important}
-footer a{color:#806447;text-decoration:none}footer a:hover{text-decoration:underline}
-.toast-container .toast{border-radius:5px}
-:focus-visible{outline:2px solid #A58B67!important;outline-offset:3px}
-@media(min-width:992px){.hero .row{min-height:430px}.hero .col-lg-5{padding-left:1.5rem}}
-@media(max-width:767px){.hero{padding:3.6rem 0 3rem}.hero h1{font-size:clamp(2.75rem,12vw,3.65rem)}.hero p{font-size:.94rem}.hero .surface{transform:none}.hero .d-flex.gap-4{gap:.8rem!important;flex-wrap:wrap}.hero .d-flex.gap-4 span{font-size:.74rem}.price-tier{min-height:132px;padding:.9rem .45rem}.price-tier .fs-3{font-size:1.65rem!important}#view-marketplace>.container{padding-top:2.8rem!important;padding-bottom:2.8rem!important}.surface{border-radius:6px}.auth-panel{margin-bottom:0}.navbar .container{min-height:68px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
-
-
-/* Gallery and customer-review experience */
-.gallery-card{position:relative;overflow:hidden;border-radius:14px;background:#eee5d8;border:1px solid var(--line);min-height:230px;box-shadow:var(--shadow)}.gallery-card img{display:block;width:100%;height:280px;object-fit:cover;transition:transform .5s ease}.gallery-card:hover img{transform:scale(1.035)}.gallery-placeholder{min-height:230px;display:grid;place-items:center;color:#8a7761;background:linear-gradient(145deg,#eee5d8,#d9c7b0);font-family:"Playfair Display",serif;font-size:1.25rem}.review-card{height:100%;background:#fffdfa;border:1px solid var(--line);border-radius:14px;padding:1.25rem}.review-stars{color:#aa8654;letter-spacing:.12em}.gallery-admin-thumb{width:74px;height:74px;object-fit:cover;border-radius:8px;border:1px solid var(--line)}.rating-choice{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:.2rem}.rating-choice input{position:absolute;opacity:0;pointer-events:none}.rating-choice label{font-size:1.7rem;line-height:1;cursor:pointer;color:#d8cfc2}.rating-choice label:hover,.rating-choice label:hover~label,.rating-choice input:checked~label{color:#aa8654}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FAF8F5">
+  <title>Luna Wick Co. — Candle Studio & Wholesale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg sticky-top">
- <div class="container py-2">
-  <a class="navbar-brand d-flex align-items-center" href="#" data-view="marketplace"><span class="brand-mark">L</span><span>Luna Wick Co.<small class="d-block font-sans small text-muted" style="font:500 .65rem Inter;letter-spacing:.12em">CANDLE STUDIO</small></span></a>
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-  <div class="collapse navbar-collapse" id="mainNav">
-   <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2" id="navLinks">
-    <li class="nav-item"><a class="nav-link" data-view="marketplace">Shop & Customize</a></li>
-    <li class="nav-item"><button class="nav-link btn btn-link text-decoration-none" type="button" data-bs-toggle="modal" data-bs-target="#faqModal">Help / FAQ</button></li>
-    <li class="nav-item"><a class="nav-link" data-view="auth" id="navAuth">Login / Register</a></li>
-    <li class="nav-item hidden" id="navProfileWrap"><a class="nav-link" data-view="profile">My Profile</a></li>
-    <li class="nav-item hidden" id="navOrdersWrap"><a class="nav-link" data-view="orders">Track Orders</a></li>
-    <li class="nav-item hidden" id="navAdminWrap"><a class="nav-link fw-bold" style="color:var(--terra)" data-view="admin">⚙️ Admin Control Panel</a></li>
-    <li class="nav-item hidden" id="navLogoutWrap"><button class="btn btn-outline-terra btn-sm ms-lg-2" id="logoutBtn">Logout</button></li>
-   </ul>
+  <div class="container py-2">
+    <a class="navbar-brand d-flex align-items-center" href="/index.html"><span class="brand-mark">L</span><span>Luna Wick Co.<small class="d-block font-sans small text-muted">Candle Studio & Wholesale</small></span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2" id="navLinks">
+        <li class="nav-item"><a class="nav-link" href="/customize.html">Customize</a></li>
+        <li class="nav-item"><a class="nav-link" href="/gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="/admin.html">Admin</a></li>
+        <li class="nav-item"><a class="nav-link" href="/index.html#contact">Contact</a></li>
+      </ul>
+    </div>
   </div>
- </div>
 </nav>
 
 <main>
-<section id="view-marketplace" class="view active">
- <header class="hero"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-7"><div class="eyebrow mb-3">Small-batch craft · Wholesale-ready</div><h1>Made to glow.<br><span class="text-terra">Built for your brand.</span></h1><p class="mt-4">Thoughtfully crafted soy candles for thoughtful spaces, thoughtful gifts, and growing businesses. Personalize your vessel, scent, lid, and label — then get transparent pricing as your order grows.</p><div class="d-flex gap-2 flex-wrap mt-4"><a href="#customizer" class="btn btn-terra btn-lg px-4" id="startCustomizing">Build your candle</a><a href="#pricing" class="btn btn-outline-terra btn-lg px-4">Explore wholesale rates</a><button type="button" class="btn btn-link text-decoration-none px-2" data-bs-toggle="modal" data-bs-target="#productDetailsModal">Product details</button></div><div class="d-flex gap-4 mt-4 small-muted"><span>✦ Soy-wax inspired</span><span>✦ Custom branding</span><span>✦ PH-based supply</span></div></div><div class="col-lg-5"><div class="surface p-3"><div class="product-art" style="min-height:340px"><div class="candle" style="transform:scale(1.55)"><div class="candle-label">LUNA WICK<br><small>slow mornings</small></div></div></div><div class="d-flex justify-content-between align-items-center px-2 pt-3"><div><div class="serif fs-5">Signature Soy Candle</div><div class="small-muted">Your scent. Your story.</div></div><span class="pill">Customizable</span></div></div></div></div></div></header>
- <div class="container py-5">
-  <div class="row g-4 mb-5"><div class="col-md-4"><div class="surface h-100"><div class="eyebrow">01 / Thoughtful materials</div><h3 class="h4 mt-3">A considered candle</h3><p class="small-muted mb-0">Choose your vessel and finish for a cohesive look across your product line.</p></div></div><div class="col-md-4"><div class="surface h-100"><div class="eyebrow">02 / Flexible volumes</div><h3 class="h4 mt-3">Retail to wholesale</h3><p class="small-muted mb-0">Pricing adjusts with quantity, from individual retail orders to larger production runs.</p></div></div><div class="col-md-4"><div class="surface h-100"><div class="eyebrow">03 / Your identity</div><h3 class="h4 mt-3">Made for your brand</h3><p class="small-muted mb-0">Add your artwork or keep the clean, unlabeled look. Freight is estimated separately.</p></div></div></div>
-  <section id="pricing" class="mb-5"><div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-3"><div><div class="eyebrow">Transparent volume rates</div><h2 class="h2 mt-2">A better price by the batch</h2></div><div class="small-muted">Retail: ₱350 per candle for 1–49 pieces</div></div>
-   <div class="row g-3 row-cols-2 row-cols-lg-4"><div class="col"><button type="button" class="price-tier w-100" id="tierBadge1" data-tier-quantity="75" aria-label="Choose 50 to 99 pieces at 250 pesos each"><div class="small-muted">50–99 pcs</div><div class="fs-3 serif">₱250</div><small>/ piece</small></button></div><div class="col"><button type="button" class="price-tier w-100" id="tierBadge2" data-tier-quantity="200" aria-label="Choose 100 to 299 pieces at 200 pesos each"><div class="small-muted">100–299 pcs</div><div class="fs-3 serif">₱200</div><span class="badge badge-sage">Save 20%</span></button></div><div class="col"><button type="button" class="price-tier w-100" id="tierBadge3" data-tier-quantity="400" aria-label="Choose 300 to 499 pieces at 180 pesos each"><div class="small-muted">300–499 pcs</div><div class="fs-3 serif">₱180</div><span class="badge badge-sage">Save 28%</span></button></div><div class="col"><button type="button" class="price-tier w-100" id="tierBadge4" data-tier-quantity="500" aria-label="Choose 500 or more pieces at 150 pesos each"><div class="small-muted">500+ pcs</div><div class="fs-3 serif">₱150</div><span class="badge badge-sage">Best value · Save 40%</span></button></div></div></div>
+  <header class="hero py-6">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7">
+          <div class="eyebrow">Small-batch craft · Wholesale-ready</div>
+          <h1 class="display-4">Made to glow.
+            <br><span class="text-terra">Candles with purpose, design, and care.</span>
+          </h1>
+          <p class="lead text-muted">Luna Wick Co. makes small-batch soy candles for retailers and hospitality partners. Start a custom production request, explore our gallery, or try the new customizer to preview your label and vessel.</p>
+          <p class="mt-4">
+            <a class="btn btn-terra btn-lg me-2" href="/customize.html">Customize a Candle</a>
+            <a class="btn btn-outline-terra btn-lg" href="/gallery.html">View Gallery</a>
+          </p>
+        </div>
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="product-art surface p-5 text-center">
+            <div class="candle mx-auto"></div>
+            <div class="mt-4 small-muted">Signature soy candle — 100ml amber glass</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="container py-5" id="features">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="surface h-100 p-4">
+          <div class="eyebrow">01 / Thoughtful materials</div>
+          <h3 class="mt-3">A considered candle</h3>
+          <p class="small-muted">We use natural soy wax, custom fragrance blends, and recyclable packaging. Wholesale pricing is transparent and volume-based.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="surface h-100 p-4">
+          <div class="eyebrow">02 / Custom production</div>
+          <h3 class="mt-3">Build your signature</h3>
+          <p class="small-muted">Use the customizer to choose vessel, scent, lid, and upload label artwork. Save a quote or submit a production request when you're ready.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="surface h-100 p-4">
+          <div class="eyebrow">03 / Studio gallery</div>
+          <h3 class="mt-3">Made to be seen</h3>
+          <p class="small-muted">Browse real orders and studio photography. Administrators can add images and manage descriptions from the gallery page.</p>
+        </div>
+      </div>
+    </div>
   </section>
-  <div class="row g-4 align-items-start" id="customizer"><div class="col-lg-8">
-   <section class="surface mb-4"><div class="d-flex justify-content-between align-items-start gap-3 mb-4"><div><div class="eyebrow">Candle configurator</div><h2 class="h3 mt-2 mb-1">Build your signature candle</h2><p class="small-muted mb-0">Configure the details, review your estimate, and submit a production request.</p></div><span class="pill" id="stepCount">Step 1 of 4</span></div>
-    <div class="progress mb-4" style="height:5px;background:#eee8df"><div class="progress-bar" id="wizardProgress" style="width:25%;background:var(--sage)"></div></div>
-    <div class="step-panel active" id="step1"><h3 class="h5 mb-3">01 · Choose a vessel</h3><div class="row g-3"><div class="col-md-4"><div class="option-card selected" data-vessel="amber"><div class="fs-3 mb-2">🫙</div><strong>100ml Amber Glass</strong><div class="small-muted mt-1">Classic warm glow</div><span class="badge text-bg-light mt-3">Included</span></div></div><div class="col-md-4"><div class="option-card" data-vessel="ceramic"><div class="fs-3 mb-2">🏺</div><strong>200ml Matte Ceramic</strong><div class="small-muted mt-1">Premium texture</div><span class="badge text-bg-light mt-3">+₱30 / pc</span></div></div><div class="col-md-4"><div class="option-card" data-vessel="frosted"><div class="fs-3 mb-2">🧊</div><strong>250ml Frosted Glass</strong><div class="small-muted mt-1">Soft diffused light</div><span class="badge text-bg-light mt-3">+₱15 / pc</span></div></div></div><div class="d-flex justify-content-end mt-4"><button class="btn btn-terra" data-next="1">Choose scent →</button></div></div>
-    <div class="step-panel" id="step2"><h3 class="h5 mb-3">02 · Select a scent</h3><div class="row g-3"><div class="col-sm-6"><div class="option-card selected" data-scent="Lavender & Sage"><strong>🌿 Lavender & Sage</strong><div class="small-muted mt-1">Soft, herbal, calming</div></div></div><div class="col-sm-6"><div class="option-card" data-scent="Espresso Bourbon"><strong>☕ Espresso Bourbon</strong><div class="small-muted mt-1">Warm, roasted, rich</div></div></div><div class="col-sm-6"><div class="option-card" data-scent="Fresh Bamboo"><strong>🎋 Fresh Bamboo</strong><div class="small-muted mt-1">Green, clean, airy</div></div></div><div class="col-sm-6"><div class="option-card" data-scent="Vanilla Woods"><strong>🪵 Vanilla Woods</strong><div class="small-muted mt-1">Creamy, woody, smooth</div></div></div></div><div class="d-flex justify-content-between mt-4"><button class="btn btn-outline-secondary" data-next="-1">← Back</button><button class="btn btn-terra" data-next="1">Choose lid →</button></div></div>
-    <div class="step-panel" id="step3"><h3 class="h5 mb-3">03 · Choose a lid</h3><div class="row g-3"><div class="col-md-4"><div class="option-card selected" data-lid="bamboo"><strong>🎋 Raw Bamboo</strong><div class="small-muted mt-2">+₱10 / pc</div></div></div><div class="col-md-4"><div class="option-card" data-lid="black"><strong>⚫ Matte Black Metal</strong><div class="small-muted mt-2">+₱5 / pc</div></div></div><div class="col-md-4"><div class="option-card" data-lid="none"><strong>⭕ No Lid</strong><div class="small-muted mt-2">Included</div></div></div></div><div class="d-flex justify-content-between mt-4"><button class="btn btn-outline-secondary" data-next="-1">← Back</button><button class="btn btn-terra" data-next="1">Brand your candle →</button></div></div>
-    <div class="step-panel" id="step4"><h3 class="h5 mb-3">04 · Artwork & label</h3><div class="row g-3"><div class="col-md-6"><div class="option-card selected" data-label="artwork"><strong>🎨 Upload my artwork</strong><div class="small-muted mt-1">Attach a design file to your request.</div></div></div><div class="col-md-6"><div class="option-card" data-label="plain"><strong>📄 Plain / unlabeled</strong><div class="small-muted mt-1">Minimal vessel, ready for your own labels.</div></div></div></div><div class="mt-3" id="artworkField"><label class="field-label" for="artworkFile">Artwork file (optional)</label><input type="file" id="artworkFile" class="form-control" accept=".png,.jpg,.jpeg,.pdf,.svg"><div class="small-muted mt-1">The file is not uploaded to Firebase Storage by this demo; provide it separately after the request.</div></div><div class="d-flex justify-content-between mt-4"><button class="btn btn-outline-secondary" data-next="-1">← Back</button><button class="btn btn-terra" id="saveQuoteBtn">Save quote locally</button></div></div>
-   </section>
-   <section class="surface"><div class="eyebrow">Production request</div><h2 class="h3 mt-2">Ready to make it yours?</h2><p class="small-muted">Sign in is required to place an order so your account can track it securely.</p><form id="orderForm" novalidate><div class="row g-3"><div class="col-md-6"><label class="field-label" for="orderCompany">Company name *</label><input class="form-control" id="orderCompany" required maxlength="150"></div><div class="col-md-6"><label class="field-label" for="orderTin">Company TIN *</label><input class="form-control" id="orderTin" required maxlength="40" placeholder="Tax identification number"></div><div class="col-12"><label class="field-label" for="orderAddress">Shipping address *</label><textarea class="form-control" id="orderAddress" rows="2" required maxlength="700"></textarea></div><div class="col-md-6"><label class="field-label" for="orderContact">Contact person *</label><input class="form-control" id="orderContact" required maxlength="120"></div><div class="col-md-6"><label class="field-label" for="orderEmail">Contact email *</label><input class="form-control" id="orderEmail" type="email" required maxlength="254"></div><div class="col-12"><label class="field-label d-block">Payment model</label><div class="row g-2"><div class="col-md-6"><label class="option-card d-block"><input type="radio" name="paymentModel" value="50_deposit" checked> <strong>50% production deposit</strong><div class="small-muted mt-1" id="depositText">₱0.00 deposit estimate</div></label></div><div class="col-md-6"><label class="option-card d-block"><input type="radio" name="paymentModel" value="100_upfront"> <strong>100% upfront</strong><div class="small-muted mt-1" id="upfrontText">₱0.00 total due</div></label></div></div></div><div class="col-12"><label class="field-label d-block">Preferred payment method</label><div class="d-flex flex-wrap gap-3"><label><input type="radio" name="payMethod" value="Bank Transfer" checked> Bank transfer</label><label><input type="radio" name="payMethod" value="E-Wallet"> GCash / Maya</label><label><input type="radio" name="payMethod" value="Corporate PO"> Corporate PO</label></div></div><div class="col-12"><div class="notice small-muted">Submitting creates an order request with payment status <strong>pending_verification</strong>. This page does not collect card credentials or confirm payment.</div></div><div class="col-12"><button class="btn btn-terra btn-lg w-100" id="submitOrderBtn" type="submit">Sign in to submit order</button></div></div></form></section>
-  </div><aside class="col-lg-4"><div class="surface sticky-lg-top" style="top:100px"><div class="eyebrow">Your configuration</div><h3 class="h4 mt-2">Order summary</h3><div class="summary-line"><span>Quantity</span><strong id="summaryQty">100 pcs</strong></div><div class="summary-line"><span>Base rate</span><strong id="summaryBase">₱200.00</strong></div><div class="summary-line"><span>Vessel</span><strong id="summaryVessel" class="text-end">100ml Amber Glass</strong></div><div class="summary-line"><span>Scent</span><strong id="summaryScent" class="text-end">Lavender & Sage</strong></div><div class="summary-line"><span>Lid</span><strong id="summaryLid" class="text-end">Raw Bamboo</strong></div><div class="summary-line"><span>Label</span><strong id="summaryLabel" class="text-end">Custom artwork</strong></div><hr><label class="field-label" for="quantityInput">Quantity (pieces)</label><input type="number" class="form-control" id="quantityInput" min="1" max="10000" step="1" value="100"><div class="small-muted mt-2" id="tierHint">Add 200 pieces to unlock the next tier.</div><div class="summary-line mt-3"><span>Adjusted unit price</span><strong id="summaryUnit">₱210.00</strong></div><div class="summary-line"><span>Estimated weight</span><strong id="summaryWeight">40.0 kg</strong></div><hr><div class="d-flex justify-content-between align-items-end"><span class="fw-semibold">Estimated total</span><strong class="summary-total text-sage" id="summaryTotal">₱21,000.00</strong></div><div class="small-muted mt-2">Freight estimate is separate and subject to final quote.</div><hr><div class="eyebrow">PH freight diagnostics</div><div class="small-muted mt-2" id="freightText">Calculating estimate…</div></div></aside></div>
- </div>
-  <div class="container">
-  <section id="gallerySection" class="mt-5 mb-5">
-   <div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-4"><div><div class="eyebrow">The Luna Wick edit</div><h2 class="h2 mt-2 mb-1">Made to be seen. Made to be felt.</h2><p class="small-muted mb-0">Explore candle finishes, details, and moments from our studio.</p></div><span class="pill">Studio gallery</span></div>
-   <div id="publicGallery" class="row g-3"><div class="col-md-4"><div class="gallery-card"><div class="gallery-placeholder">A little glow, thoughtfully made</div></div></div><div class="col-md-4"><div class="gallery-card"><div class="gallery-placeholder">Your scent. Your story.</div></div></div><div class="col-md-4"><div class="gallery-card"><div class="gallery-placeholder">Everyday rituals, elevated</div></div></div></div>
+
+  <section class="container py-5" id="contact">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Contact</h2>
+        <p class="small-muted">Questions about wholesale, pricing or production? Email us at <a href="mailto:hello@lunawick.co">hello@lunawick.co</a>.</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <p class="small-muted">© <span id="year"></span> Luna Wick Co.</p>
+      </div>
+    </div>
   </section>
-  <section id="reviewsSection" class="mt-5 mb-4">
-   <div class="row g-4"><div class="col-lg-4"><div class="eyebrow">Kind words</div><h2 class="h2 mt-2">Reviews from our customers</h2><p class="small-muted">We believe the little details make the difference. Customer reviews appear here after moderation.</p><div class="surface"><h3 class="h5">Share your experience</h3><p class="small-muted">Sign in to leave a review. Reviews are checked before they appear publicly.</p><form id="reviewForm"><div class="mb-3"><label class="field-label d-block">Your rating *</label><div class="rating-choice" aria-label="Choose a rating"><input type="radio" id="rating5" name="reviewRating" value="5" required><label for="rating5" title="5 stars">★</label><input type="radio" id="rating4" name="reviewRating" value="4"><label for="rating4" title="4 stars">★</label><input type="radio" id="rating3" name="reviewRating" value="3"><label for="rating3" title="3 stars">★</label><input type="radio" id="rating2" name="reviewRating" value="2"><label for="rating2" title="2 stars">★</label><input type="radio" id="rating1" name="reviewRating" value="1"><label for="rating1" title="1 star">★</label></div></div><div class="mb-3"><label class="field-label" for="reviewTitle">Review title *</label><input class="form-control" id="reviewTitle" maxlength="90" required placeholder="What stood out to you?"></div><div class="mb-3"><label class="field-label" for="reviewText">Your review *</label><textarea class="form-control" id="reviewText" rows="4" maxlength="1200" required placeholder="Tell us about the candle, scent, or experience..."></textarea></div><button type="submit" class="btn btn-terra w-100" id="submitReviewBtn">Submit review</button><div class="small-muted mt-2">Please share an honest review. Avoid posting private information.</div></form></div></div><div class="col-lg-8"><div class="d-flex justify-content-between align-items-center mb-3"><h3 class="h4 mb-0">Customer notes</h3><span class="small-muted" id="reviewCount">0 reviews</span></div><div id="publicReviews" class="row g-3"><div class="col-12"><div class="surface text-center py-4"><div class="review-stars fs-4">★★★★★</div><p class="small-muted mb-0 mt-2">Be the first to share your experience.</p></div></div></div></div></div>
-  </section>
-  </div>
-</section>
-
-<section id="view-auth" class="view py-5"><div class="container"><div class="auth-shell"><div class="row g-0 surface overflow-hidden"><div class="col-lg-5 p-3 p-md-4"><div class="auth-panel"><div class="eyebrow">Welcome to Luna Wick</div><h2 class="mt-3">Good things take a little glow.</h2><p class="small-muted mt-3">Sign in to manage your company profile, submit custom candle requests, and follow production updates in one place.</p><div class="product-art mt-4"><div class="candle"><div class="candle-label">LUNA WICK</div></div></div></div></div><div class="col-lg-7 p-4 p-md-5"><div class="d-flex gap-2 mb-4"><button class="btn btn-terra" id="showLogin">Sign in</button><button class="btn btn-outline-terra" id="showRegister">Create account</button></div><div id="loginPanel"><h2 class="h3">Welcome back</h2><p class="small-muted">Sign in with your account credentials.</p><form id="loginForm" class="mt-4"><div class="mb-3"><label class="field-label" for="loginEmail">Email address</label><input id="loginEmail" type="email" class="form-control" required autocomplete="email"></div><div class="mb-3"><label class="field-label" for="loginPassword">Password</label><input id="loginPassword" type="password" class="form-control" required autocomplete="current-password" minlength="6"></div><button class="btn btn-terra w-100 mt-2" type="submit" id="loginBtn">Sign in</button></form></div><div id="registerPanel" class="hidden"><h2 class="h3">Create your account</h2><p class="small-muted">Register as a Luna Wick customer or business partner.</p><form id="registerForm" class="mt-4"><div class="mb-3"><label class="field-label" for="regName">Full name *</label><input id="regName" class="form-control" required maxlength="120" autocomplete="name"></div><div class="mb-3"><label class="field-label" for="regCompany">Company name</label><input id="regCompany" class="form-control" maxlength="150" autocomplete="organization"></div><div class="mb-3"><label class="field-label" for="regTin">Company TIN</label><input id="regTin" class="form-control" maxlength="40"></div><div class="mb-3"><label class="field-label" for="regAddress">Shipping address</label><textarea id="regAddress" class="form-control" rows="2" maxlength="700"></textarea></div><div class="mb-3"><label class="field-label" for="regEmail">Email address *</label><input id="regEmail" type="email" class="form-control" required maxlength="254" autocomplete="email"></div><div class="mb-3"><label class="field-label" for="regPassword">Password *</label><input id="regPassword" type="password" class="form-control" required minlength="8" autocomplete="new-password"><div class="small-muted mt-1">Use at least 8 characters.</div></div><button class="btn btn-terra w-100 mt-2" type="submit" id="registerBtn">Create customer account</button></form></div><div class="small-muted mt-4">By continuing, you agree to use this portal for legitimate order and account activity.</div></div></div></div></div></section>
-
-<section id="view-profile" class="view py-5"><div class="container"><div class="eyebrow">Account</div><h1 class="h2 mt-2 mb-4">My profile</h1><div class="row g-4"><div class="col-lg-7"><div class="surface"><h2 class="h4 mb-3">Business details</h2><form id="profileForm"><div class="mb-3"><label class="field-label" for="profileName">Full name</label><input class="form-control" id="profileName" required maxlength="120"></div><div class="mb-3"><label class="field-label" for="profileCompany">Company name</label><input class="form-control" id="profileCompany" maxlength="150"></div><div class="mb-3"><label class="field-label" for="profileTin">Company TIN</label><input class="form-control" id="profileTin" maxlength="40"></div><div class="mb-3"><label class="field-label" for="profileAddress">Shipping address</label><textarea class="form-control" id="profileAddress" rows="3" maxlength="700"></textarea></div><div class="small-muted mb-3" id="profileEmail"></div><button class="btn btn-terra" type="submit" id="saveProfileBtn">Save profile</button></form></div></div><div class="col-lg-5"><div class="surface"><div class="eyebrow">Account status</div><h3 class="h4 mt-2">Your Luna Wick account</h3><p class="small-muted">Use the order tracker to follow your request from receipt through fulfillment.</p><button class="btn btn-outline-terra" data-view="orders">Track my orders →</button></div></div></div></div></section>
-
-<section id="view-orders" class="view py-5"><div class="container"><div class="eyebrow">Production tracker</div><h1 class="h2 mt-2">Track your orders</h1><p class="small-muted mb-4">Order updates appear here when your production team changes the status.</p><div id="clientOrders"><div class="surface text-center py-5">Sign in to view your orders.</div></div></div></section>
-
-<section id="view-admin" class="view py-5"><div class="container"><div class="eyebrow">Restricted workspace</div><h1 class="h2 mt-2">Admin control panel</h1><div id="adminAccessMessage" class="surface mb-4">Verifying permissions…</div><div id="adminContent" class="hidden"><div class="row g-3 mb-4"><div class="col-md-4"><div class="surface"><div class="small-muted">Total orders</div><div class="summary-total" id="adminOrderCount">0</div></div></div><div class="col-md-4"><div class="surface"><div class="small-muted">Pending verification</div><div class="summary-total" id="adminPendingCount">0</div></div></div><div class="col-md-4"><div class="surface"><div class="small-muted">Registered profiles</div><div class="summary-total" id="adminUserCount">0</div></div></div></div><div class="surface mb-4"><div class="d-flex justify-content-between align-items-center flex-wrap gap-2"><h2 class="h4 mb-0">Order fulfillment manager</h2><button class="btn btn-outline-terra btn-sm" id="refreshAdminBtn">Refresh data</button></div><div class="table-responsive mt-3"><table class="table align-middle"><thead><tr><th>Order / Date</th><th>Customer / TIN</th><th>Items</th><th>Total</th><th>Payment</th><th>Order status</th></tr></thead><tbody id="adminOrdersBody"><tr><td colspan="6">Loading orders…</td></tr></tbody></table></div></div><div class="surface mb-4"><div class="eyebrow">Brand storytelling</div><h2 class="h4 mt-2">Gallery manager</h2><p class="small-muted">Upload product and studio photos. Images are stored in Firebase Storage and shown publicly on the shop after upload.</p><form id="galleryUploadForm" class="row g-3 align-items-end"><div class="col-md-5"><label class="field-label" for="galleryImageFile">Choose image *</label><input type="file" class="form-control" id="galleryImageFile" accept="image/jpeg,image/png,image/webp" required><div class="small-muted mt-1">JPG, PNG, or WebP · up to 5 MB</div></div><div class="col-md-5"><label class="field-label" for="galleryCaption">Caption (optional)</label><input class="form-control" id="galleryCaption" maxlength="120" placeholder="A quiet evening ritual"></div><div class="col-md-2"><button class="btn btn-terra w-100" type="submit" id="galleryUploadBtn">Upload</button></div></form><div id="galleryUploadStatus" class="small-muted mt-2" aria-live="polite"></div><div id="adminGalleryList" class="row g-3 mt-2"><div class="small-muted">Loading gallery…</div></div></div><div class="surface mb-4"><div class="eyebrow">Community</div><h2 class="h4 mt-2">Review moderation</h2><p class="small-muted">Approve genuine customer feedback before it appears publicly, or remove inappropriate submissions.</p><div id="adminReviewsList"><div class="small-muted">Loading reviews…</div></div></div>
-<div class="surface"><h2 class="h4">Customer directory</h2><div class="table-responsive mt-3"><table class="table align-middle"><thead><tr><th>Name</th><th>Company</th><th>TIN</th><th>Email</th><th>Role</th></tr></thead><tbody id="adminUsersBody"><tr><td colspan="5">Loading customers…</td></tr></tbody></table></div></div></div></div></section>
 </main>
-<footer class="py-4 mt-5"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2 small-muted"><span>© <span id="year"></span> Luna Wick Co. · Candle Studio & Wholesale</span><span>Crafted with care in the Philippines · <a href="mailto:sales@lunawick.ph">Contact sales</a></span></div></footer>
-<div class="modal fade" id="productDetailsModal" tabindex="-1" aria-labelledby="productDetailsTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content" style="border:1px solid var(--line);border-radius:18px"><div class="modal-header"><h2 class="modal-title h4" id="productDetailsTitle">Signature Soy Candle</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><div class="product-art mb-3"><div class="candle"><div class="candle-label">LUNA WICK<br><small>slow mornings</small></div></div></div><p>Build a candle for your home, gifting line, or business. Choose your vessel, scent, lid, label style, and production quantity.</p><ul class="mb-0"><li>Volume pricing automatically updates by quantity.</li><li>Custom artwork is currently recorded as a request only; file upload to cloud storage is not enabled yet.</li><li>Shipping is estimated separately and confirmed before fulfillment.</li></ul></div><div class="modal-footer"><button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button><button type="button" class="btn btn-terra" id="modalCustomizeBtn">Customize candle</button></div></div></div></div>
-<div class="modal fade" id="faqModal" tabindex="-1" aria-labelledby="faqTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered modal-lg"><div class="modal-content" style="border:1px solid var(--line);border-radius:18px"><div class="modal-header"><h2 class="modal-title h4" id="faqTitle">Help & frequently asked questions</h2><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body"><div class="accordion" id="faqAccordion"><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqPricing">How does batch pricing work?</button></h3><div id="faqPricing" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Select a pricing tier to set a sample quantity, or type any quantity into the order summary. The unit price updates at 1–49, 50–99, 100–299, 300–499, and 500+ pieces.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqOrder">How do I submit an order?</button></h3><div id="faqOrder" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Configure your candle, complete the production-request form, and sign in when prompted. Requests remain pending until reviewed by the store team.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqPayment">Does this site process payments?</button></h3><div id="faqPayment" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No. It records the preferred payment method and a pending-verification status. It does not charge a card, verify a transfer automatically, or confirm payment.</div></div></div><div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFreight">Is shipping included?</button></h3><div id="faqFreight" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No. The displayed freight note is only an estimate. Final shipping costs depend on the delivery route, parcel dimensions, and carrier availability.</div></div></div></div></div><div class="modal-footer"><button type="button" class="btn btn-terra" data-bs-dismiss="modal">Got it</button></div></div></div></div>
-<div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
+<script type="module" src="/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-import { getFirestore, doc, getDoc, setDoc, updateDoc, addDoc, deleteDoc, collection, query, where, getDocs, onSnapshot, serverTimestamp, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBKD9Yt_JW4pS4lU_R-Alpk2HtDpMZ5kAI",
-  authDomain: "lunawick-c9469.firebaseapp.com",
-  projectId: "lunawick-c9469",
-  storageBucket: "lunawick-c9469.firebasestorage.app",
-  messagingSenderId: "621812490472",
-  appId: "1:621812490472:web:b9447fd99d69d1851ea95d",
-  measurementId: "G-5W3MQD2PWT"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const storage = getStorage(app);
-const $ = (id) => document.getElementById(id);
-const currentState = { currentView: "marketplace", user: null, profile: null, admin: false, orderUnsubscribe: null, adminUnsubscribers: [] };
-const fmt = n => new Intl.NumberFormat("en-PH",{style:"currency",currency:"PHP",maximumFractionDigits:2}).format(Number(n)||0);
-const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
-const pricing = [{min:1,max:49,price:350},{min:50,max:99,price:250},{min:100,max:299,price:200},{min:300,max:499,price:180},{min:500,max:10000,price:150}];
-const vesselOptions = {amber:{name:"100ml Amber Glass",cost:0},ceramic:{name:"200ml Matte Ceramic",cost:30},frosted:{name:"250ml Frosted Glass",cost:15}};
-const lidOptions = {bamboo:{name:"Raw Bamboo",cost:10},black:{name:"Matte Black Metal",cost:5},none:{name:"No Lid",cost:0}};
-const config = {quantity:100,vessel:"amber",scent:"Lavender & Sage",lid:"bamboo",label:"artwork",step:1};
-const orderStatuses = ["received","in_production","out_for_delivery","fulfilled"];
-const statusLabels = {received:"Received",in_production:"In Production",out_for_delivery:"Out for Delivery",fulfilled:"Fulfilled"};
-let profileCache = null;
-function toast(message,type="info"){
- const node=document.createElement("div");node.className="toast align-items-center border-0";
- node.innerHTML=`<div class="d-flex"><div class="toast-body">${escapeHTML(message)}</div><button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>`;
- node.style.background=type==="error"?"#f8d7da":type==="success"?"#e6eee6":"#fff";node.style.color="#1C1C1C";$("toastContainer").append(node);
- const t=new bootstrap.Toast(node,{delay:5000});t.show();node.addEventListener("hidden.bs.toast",()=>node.remove());
-}
-function setBusy(button,busy,label){if(!button)return;button.disabled=busy;button.classList.toggle("loading",busy);if(busy){button.dataset.oldLabel=button.textContent;button.textContent=label||"Please wait…"}else{button.textContent=button.dataset.oldLabel||label||"Submit";delete button.dataset.oldLabel}}
-function showView(view){
- const allowed=["marketplace","auth","profile","orders","admin"];if(!allowed.includes(view))view="marketplace";
- if(["profile","orders"].includes(view)&&!currentState.user){view="auth";toast("Please sign in to continue.");}
- if(view==="admin"&&!currentState.admin){view="admin";renderDenied();}
- currentState.currentView=view;
- document.querySelectorAll(".view").forEach(el=>el.classList.toggle("active",el.id===`view-${view}`));
- document.querySelectorAll("[data-view]").forEach(el=>{if(el.classList.contains("nav-link"))el.classList.toggle("active",el.dataset.view===view)});
- const navCollapse=$("mainNav");if(navCollapse.classList.contains("show"))bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
- if(view==="profile")loadProfileForm();if(view==="orders")startClientOrders();if(view==="admin"&&currentState.admin)startAdminListeners();
- window.scrollTo({top:0,behavior:"smooth"});
-}
-document.querySelectorAll("[data-view]").forEach(el=>el.addEventListener("click",e=>{e.preventDefault();showView(el.dataset.view)}));
-$("year").textContent=new Date().getFullYear();
-function priceFor(q){return (pricing.find(t=>q>=t.min&&q<=t.max)||pricing[0]).price}
-function calculate(){
- const q=Math.min(10000,Math.max(1,Math.floor(Number(config.quantity)||1)));config.quantity=q;
- const base=priceFor(q),vessel=vesselOptions[config.vessel],lid=lidOptions[config.lid],unit=base+vessel.cost+lid.cost,total=unit*q,weight=q*.4;
- $("quantityInput").value=q;$("summaryQty").textContent=`${q.toLocaleString()} pcs`;$("summaryBase").textContent=fmt(base);
- $("summaryVessel").textContent=vessel.name;$("summaryScent").textContent=config.scent;$("summaryLid").textContent=lid.name;$("summaryLabel").textContent=config.label==="artwork"?"Custom artwork":"Plain / unlabeled";
- $("summaryUnit").textContent=fmt(unit);$("summaryWeight").textContent=`${weight.toFixed(1)} kg`;$("summaryTotal").textContent=fmt(total);
- $("depositText").textContent=`${fmt(total*.5)} deposit estimate`;$("upfrontText").textContent=`${fmt(total)} total due`;
- [1,2,3,4].forEach(i=>$(`tierBadge${i}`).classList.remove("active"));
- const tierIndex=q<50?0:q<100?1:q<300?2:q<500?3:4;if(tierIndex>0)$(`tierBadge${tierIndex}`).classList.add("active");
- let hint=q<50?`Retail pricing applies. ${50-q} more pieces unlock wholesale rates.`:q<100?`${100-q} more pieces unlock the ₱200/pc tier.`:q<300?`${300-q} more pieces unlock the ₱180/pc tier.`:q<500?`${500-q} more pieces unlock the ₱150/pc tier.`:"Best value tier unlocked.";
- $("tierHint").textContent=hint;
- $("freightText").textContent=weight<20?"Lalamove / Grab delivery estimate: ₱300–₱600. Actual cost depends on route, parcel size, and availability.":"AP Cargo / Capex heavy freight: manual quote verification required. Final freight is not included in the product total.";
- $("submitOrderBtn").textContent=currentState.user?"Submit production request":"Sign in to submit order";
- return {quantity:q,baseUnitPrice:base,unitPrice:unit,total,weight};
-}
-$("quantityInput").addEventListener("input",()=>{config.quantity=$("quantityInput").value;calculate()});
-document.querySelectorAll("[data-tier-quantity]").forEach(card=>card.addEventListener("click",()=>{config.quantity=Number(card.dataset.tierQuantity);$("quantityInput").value=config.quantity;calculate();document.querySelector("#customizer").scrollIntoView({behavior:"smooth",block:"start"});toast(`Quantity set to ${config.quantity.toLocaleString()} pieces. Unit price updated.`,"success")}));
-$("modalCustomizeBtn").addEventListener("click",()=>{bootstrap.Modal.getOrCreateInstance($("productDetailsModal")).hide();document.querySelector("#customizer").scrollIntoView({behavior:"smooth",block:"start"})});
-document.querySelectorAll("[data-vessel]").forEach(el=>el.addEventListener("click",()=>{config.vessel=el.dataset.vessel;document.querySelectorAll("[data-vessel]").forEach(n=>n.classList.toggle("selected",n===el));calculate()}));
-document.querySelectorAll("[data-scent]").forEach(el=>el.addEventListener("click",()=>{config.scent=el.dataset.scent;document.querySelectorAll("[data-scent]").forEach(n=>n.classList.toggle("selected",n===el));calculate()}));
-document.querySelectorAll("[data-lid]").forEach(el=>el.addEventListener("click",()=>{config.lid=el.dataset.lid;document.querySelectorAll("[data-lid]").forEach(n=>n.classList.toggle("selected",n===el));calculate()}));
-document.querySelectorAll("[data-label]").forEach(el=>el.addEventListener("click",()=>{config.label=el.dataset.label;document.querySelectorAll("[data-label]").forEach(n=>n.classList.toggle("selected",n===el));$("artworkField").classList.toggle("hidden",config.label!=="artwork");calculate()}));
-document.querySelectorAll("[data-next]").forEach(btn=>btn.addEventListener("click",()=>{config.step=Math.min(4,Math.max(1,config.step+Number(btn.dataset.next)));document.querySelectorAll(".step-panel").forEach(p=>p.classList.toggle("active",p.id===`step${config.step}`));$("stepCount").textContent=`Step ${config.step} of 4`;$("wizardProgress").style.width=`${config.step*25}%`}));
-$("saveQuoteBtn").addEventListener("click",()=>{const totals=calculate();const quote={...config,pricing:totals,createdAt:new Date().toISOString()};try{sessionStorage.setItem("lunaWickQuote",JSON.stringify(quote));toast("Quote saved in this browser session. Sign in to submit it as an order.","success")}catch(e){toast("Could not save quote in this browser session.","error")}});
-$("startCustomizing").addEventListener("click",()=>{config.step=1;document.querySelectorAll(".step-panel").forEach(p=>p.classList.toggle("active",p.id==="step1"))});
-function setAuthMode(mode){const login=mode==="login";$("loginPanel").classList.toggle("hidden",!login);$("registerPanel").classList.toggle("hidden",login);$("showLogin").classList.toggle("btn-terra",login);$("showLogin").classList.toggle("btn-outline-terra",!login);$("showRegister").classList.toggle("btn-terra",!login);$("showRegister").classList.toggle("btn-outline-terra",login)}
-$("showLogin").addEventListener("click",()=>setAuthMode("login"));$("showRegister").addEventListener("click",()=>setAuthMode("register"));
-$("loginForm").addEventListener("submit",async e=>{e.preventDefault();const btn=$("loginBtn");setBusy(btn,true,"Signing in…");try{await signInWithEmailAndPassword(auth,$("loginEmail").value.trim(),$("loginPassword").value);toast("Signed in successfully.","success");showView("marketplace")}catch(err){console.error(err);toast(authMessage(err),"error")}finally{setBusy(btn,false)}});
-$("registerForm").addEventListener("submit",async e=>{e.preventDefault();if(!$("registerForm").reportValidity())return;const btn=$("registerBtn");setBusy(btn,true,"Creating account…");let credential;try{credential=await createUserWithEmailAndPassword(auth,$("regEmail").value.trim(),$("regPassword").value);const profile={email:credential.user.email,fullName:$("regName").value.trim(),companyName:$("regCompany").value.trim(),tin:$("regTin").value.trim(),shippingAddress:$("regAddress").value.trim(),role:"client",createdAt:serverTimestamp()};await setDoc(doc(db,"users",credential.user.uid),profile);profileCache={...profile};toast("Account created. Welcome to Luna Wick Co.!","success");showView("marketplace")}catch(err){console.error(err);if(credential?.user){try{await signOut(auth)}catch(signOutErr){console.error(signOutErr)}}toast(authMessage(err),"error")}finally{setBusy(btn,false)}});
-function authMessage(err){const code=err?.code||"";const messages={"auth/email-already-in-use":"An account already exists for this email.","auth/invalid-email":"Please enter a valid email address.","auth/weak-password":"Choose a stronger password (at least 8 characters).","auth/invalid-credential":"Email or password is incorrect.","auth/user-not-found":"No account was found for this email.","auth/wrong-password":"Email or password is incorrect.","auth/too-many-requests":"Too many attempts. Please wait and try again.","permission-denied":"Permission denied by Firebase Security Rules. Check the deployed rules.","unavailable":"Firebase is temporarily unavailable. Check your connection."};return messages[code]||err?.message||"The request could not be completed."}
-function updateNav(){
- const logged=!!currentState.user;$("navAuth").classList.toggle("hidden",logged);$("navProfileWrap").classList.toggle("hidden",!logged);$("navOrdersWrap").classList.toggle("hidden",!logged);$("navLogoutWrap").classList.toggle("hidden",!logged);$("navAdminWrap").classList.toggle("hidden",!logged||!currentState.admin);
-}
-onAuthStateChanged(auth,async user=>{
- currentState.user=user;currentState.profile=null;currentState.admin=false;profileCache=null;
- if(currentState.orderUnsubscribe){currentState.orderUnsubscribe();currentState.orderUnsubscribe=null}
- currentState.adminUnsubscribers.forEach(unsub=>unsub());currentState.adminUnsubscribers=[];
- if(user){try{const snap=await getDoc(doc(db,"users",user.uid));if(snap.exists()){currentState.profile=snap.data();profileCache=snap.data();currentState.admin=currentState.profile.role==="admin"}else{toast("Your account profile is missing. Contact the administrator.","error")}}catch(err){console.error(err);toast("Could not load account permissions. Restricted pages remain unavailable.","error")}}
- updateNav();if(currentState.currentView==="admin"&&!currentState.admin)renderDenied();if(currentState.currentView==="profile"&&user)loadProfileForm();
-});
-$("logoutBtn").addEventListener("click",async()=>{try{await signOut(auth);toast("You have signed out.","success");showView("marketplace")}catch(err){console.error(err);toast(authMessage(err),"error")}});
-function loadProfileForm(){if(!currentState.user||!currentState.profile)return;const p=currentState.profile;$("profileName").value=p.fullName||"";$("profileCompany").value=p.companyName||"";$("profileTin").value=p.tin||"";$("profileAddress").value=p.shippingAddress||"";$("profileEmail").textContent=`Signed in as ${currentState.user.email||p.email||""}`;}
-$("profileForm").addEventListener("submit",async e=>{e.preventDefault();if(!currentState.user)return showView("auth");const btn=$("saveProfileBtn");setBusy(btn,true,"Saving…");try{const patch={fullName:$("profileName").value.trim(),companyName:$("profileCompany").value.trim(),tin:$("profileTin").value.trim(),shippingAddress:$("profileAddress").value.trim(),email:currentState.user.email};await updateDoc(doc(db,"users",currentState.user.uid),patch);currentState.profile={...currentState.profile,...patch};profileCache=currentState.profile;toast("Profile updated.","success")}catch(err){console.error(err);toast(authMessage(err),"error")}finally{setBusy(btn,false)}});
-$("orderForm").addEventListener("submit",async e=>{
- e.preventDefault();if(!currentState.user){setAuthMode("login");showView("auth");toast("Sign in or create an account before submitting an order.");return}
- const form=$("orderForm");if(!form.reportValidity())return;
- const btn=$("submitOrderBtn");setBusy(btn,true,"Submitting securely…");
- try{
-  const total=calculate();const p=currentState.profile||{};
-  const company=$("orderCompany").value.trim(),tin=$("orderTin").value.trim(),address=$("orderAddress").value.trim(),contact=$("orderContact").value.trim(),email=$("orderEmail").value.trim();
-  const orderPayload={
-   orderId:"LW-"+Date.now().toString(36).toUpperCase()+"-"+crypto.randomUUID().slice(0,6).toUpperCase(),
-   userId:currentState.user.uid,
-   items:[{productName:"Signature Soy Candle",quantity:total.quantity,vessel:vesselOptions[config.vessel].name,vesselAdjustment:vesselOptions[config.vessel].cost,scent:config.scent,lid:lidOptions[config.lid].name,lidAdjustment:lidOptions[config.lid].cost,label:config.label==="artwork"?"custom_artwork":"plain",baseUnitPrice:total.baseUnitPrice,unitPrice:total.unitPrice,lineTotal:total.total,weightKg:total.weight}],
-   totalPrice:total.total,
-   paymentModel:document.querySelector('input[name="paymentModel"]:checked').value,
-   paymentStatus:"pending_verification",
-   orderStatus:"received",
-   shippingDetails:{companyName:company,tin,shippingAddress:address,contactPerson:contact,contactEmail:email,paymentMethod:document.querySelector('input[name="payMethod"]:checked').value,estimatedWeightKg:total.weight,freightEstimate:total.weight<20?"₱300–₱600; route-dependent":"Manual AP Cargo / Capex quote required"},
-   timestamp:serverTimestamp()
-  };
-  const ref=await addDoc(collection(db,"luna_wick_bulk_orders"),orderPayload);
-  try{await updateDoc(doc(db,"users",currentState.user.uid),{companyName:company,tin,shippingAddress:address,fullName:p.fullName||contact})}catch(profileErr){console.warn("Order submitted but profile sync failed",profileErr)}
-  toast(`Order request received. Reference: ${orderPayload.orderId}`,"success");form.reset();$("orderCompany").value=company;$("orderTin").value=tin;$("orderAddress").value=address;$("orderContact").value=contact;$("orderEmail").value=email;
-  showView("orders");
- }catch(err){console.error(err);toast(authMessage(err),"error")}finally{setBusy(btn,false);calculate()}
-});
-function startClientOrders(){
- const target=$("clientOrders");if(!currentState.user){target.innerHTML='<div class="surface text-center py-5">Please sign in to view orders.</div>';return}
- if(currentState.orderUnsubscribe)currentState.orderUnsubscribe();
- target.innerHTML='<div class="surface">Loading your orders…</div>';
- try{
-  const q=query(collection(db,"luna_wick_bulk_orders"),where("userId","==",currentState.user.uid));
-  currentState.orderUnsubscribe=onSnapshot(q,snap=>{const rows=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>timestampMillis(b.timestamp)-timestampMillis(a.timestamp));renderClientOrders(rows)},err=>{console.error(err);target.innerHTML=`<div class="surface">Could not load orders. ${escapeHTML(authMessage(err))}</div>`});
- }catch(err){console.error(err);target.innerHTML='<div class="surface">Unable to connect to the order tracker.</div>'}
-}
-function timestampMillis(ts){if(ts?.toMillis)return ts.toMillis();if(ts instanceof Date)return ts.getTime();if(typeof ts==="string")return Date.parse(ts)||0;return 0}
-function readableDate(ts){const ms=timestampMillis(ts);return ms?new Date(ms).toLocaleDateString("en-PH",{year:"numeric",month:"short",day:"numeric"}):"Just submitted"}
-function renderClientOrders(rows){
- const target=$("clientOrders");if(!rows.length){target.innerHTML='<div class="surface text-center py-5"><div class="fs-1">🕯️</div><h2 class="h4 mt-3">No orders yet</h2><p class="small-muted">Your submitted production requests will appear here.</p><button class="btn btn-terra" data-view="marketplace">Build your candle</button></div>';target.querySelector("[data-view]")?.addEventListener("click",()=>showView("marketplace"));return}
- target.innerHTML=rows.map(o=>{const status=orderStatuses.includes(o.orderStatus)?o.orderStatus:"received";const active=orderStatuses.indexOf(status);const item=(o.items||[])[0]||{};const ship=o.shippingDetails||{};return `<article class="surface mb-3"><div class="d-flex justify-content-between flex-wrap gap-3"><div><div class="eyebrow">${escapeHTML(o.orderId||o.id)}</div><h2 class="h4 mt-2 mb-1">${escapeHTML(item.productName||"Candle order")} · ${Number(item.quantity)||0} pcs</h2><div class="small-muted">Submitted ${readableDate(o.timestamp)}</div></div><div class="text-md-end"><div class="summary-total">${fmt(o.totalPrice)}</div><span class="pill">${escapeHTML((o.paymentStatus||"pending_verification").replaceAll("_"," "))}</span></div></div><hr><div class="row g-4"><div class="col-md-7"><div class="fw-semibold mb-3">Production progress</div>${orderStatuses.map((s,i)=>`<div class="status-step ${i<active?"done":i===active?"current":""}"><div class="status-dot">${i<active?"✓":i+1}</div><div><div class="status-name">${statusLabels[s]}</div><div class="small-muted">${i===active?"Current status":i<active?"Completed":"Awaiting update"}</div></div></div>`).join("")}</div><div class="col-md-5"><div class="fw-semibold mb-2">Order details</div><div class="small-muted mb-2">${escapeHTML(item.vessel||"")} · ${escapeHTML(item.scent||"")} · ${escapeHTML(item.lid||"")}</div><div class="small-muted mb-2">Ship to: ${escapeHTML(ship.shippingAddress||"Address pending")}</div><div class="small-muted">Freight: ${escapeHTML(ship.freightEstimate||"Pending quote")}</div><div class="mt-3"><span class="small-muted">Order status: </span><strong>${statusLabels[status]}</strong></div></div></div></article>`}).join("");
-}
-function renderDenied(){$("adminAccessMessage").innerHTML='<div class="text-danger fw-semibold">Access denied</div><div class="small-muted mt-1">This page is restricted to accounts whose Firestore users document has role = "admin". Frontend visibility is not a security boundary; Firestore Security Rules must enforce the same restriction.</div>';$("adminContent").classList.add("hidden")}
-function startAdminListeners(){
- if(!currentState.user||!currentState.admin){renderDenied();return}
- $("adminAccessMessage").innerHTML='<div class="text-sage fw-semibold">Administrator verified</div><div class="small-muted mt-1">Live Firestore data is connected. Updates are subject to Security Rules.</div>';$("adminContent").classList.remove("hidden");
- if(currentState.adminUnsubscribers.length)return;
- try{
-  const orderUnsub=onSnapshot(collection(db,"luna_wick_bulk_orders"),snap=>{const orders=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>timestampMillis(b.timestamp)-timestampMillis(a.timestamp));renderAdminOrders(orders)},err=>{console.error(err);$("adminOrdersBody").innerHTML=`<tr><td colspan="6">${escapeHTML(authMessage(err))}</td></tr>`});
-  const userUnsub=onSnapshot(collection(db,"users"),snap=>{const users=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>String(a.fullName||"").localeCompare(String(b.fullName||"")));renderAdminUsers(users)},err=>{console.error(err);$("adminUsersBody").innerHTML=`<tr><td colspan="5">${escapeHTML(authMessage(err))}</td></tr>`});
-  currentState.adminUnsubscribers=[orderUnsub,userUnsub];startAdminContentListeners();
- }catch(err){console.error(err);toast("Could not start admin data listeners.","error")}
-}
-function renderAdminOrders(rows){
- $("adminOrderCount").textContent=rows.length;$("adminPendingCount").textContent=rows.filter(o=>o.paymentStatus==="pending_verification").length;
- if(!rows.length){$("adminOrdersBody").innerHTML='<tr><td colspan="6" class="text-center small-muted py-4">No orders have been submitted.</td></tr>';return}
- $("adminOrdersBody").innerHTML=rows.map(o=>{const ship=o.shippingDetails||{};const item=(o.items||[])[0]||{};const status=orderStatuses.includes(o.orderStatus)?o.orderStatus:"received";return `<tr><td><strong>${escapeHTML(o.orderId||o.id)}</strong><div class="small-muted">${readableDate(o.timestamp)}</div></td><td><strong>${escapeHTML(ship.companyName||"—")}</strong><div class="small-muted">TIN: ${escapeHTML(ship.tin||"—")}</div><div class="small-muted">${escapeHTML(ship.contactEmail||"")}</div></td><td>${Number(item.quantity)||0} × ${escapeHTML(item.vessel||"Candle")}<div class="small-muted">${escapeHTML(item.scent||"")}</div></td><td>${fmt(o.totalPrice)}</td><td><span class="pill">${escapeHTML((o.paymentStatus||"unknown").replaceAll("_"," "))}</span><div class="small-muted">${escapeHTML(o.paymentModel||"")}</div></td><td><select class="form-select form-select-sm order-status-select" data-doc="${escapeHTML(o.id)}" aria-label="Update order status">${orderStatuses.map(s=>`<option value="${s}" ${s===status?"selected":""}>${statusLabels[s]}</option>`).join("")}</select></td></tr>`}).join("");
- $("adminOrdersBody").querySelectorAll(".order-status-select").forEach(select=>select.addEventListener("change",async()=>{const previous=select.dataset.previous||select.querySelector("option[selected]")?.value;select.disabled=true;try{await updateDoc(doc(db,"luna_wick_bulk_orders",select.dataset.doc),{orderStatus:select.value});select.dataset.previous=select.value;toast("Order status updated.","success")}catch(err){console.error(err);toast("Could not update order status: "+authMessage(err),"error");if(previous)select.value=previous}finally{select.disabled=false}}));
-}
-function renderAdminUsers(users){
- $("adminUserCount").textContent=users.length;if(!users.length){$("adminUsersBody").innerHTML='<tr><td colspan="5" class="text-center small-muted py-4">No customer profiles found.</td></tr>';return}
- $("adminUsersBody").innerHTML=users.map(u=>`<tr><td><strong>${escapeHTML(u.fullName||"—")}</strong><div class="small-muted">${escapeHTML(u.id)}</div></td><td>${escapeHTML(u.companyName||"—")}</td><td>${escapeHTML(u.tin||"—")}</td><td>${escapeHTML(u.email||"—")}</td><td><span class="pill">${escapeHTML(u.role||"client")}</span></td></tr>`).join("");
-}
-// Live public gallery and approved customer reviews.
-function startPublicContentListeners(){
- onSnapshot(query(collection(db,"luna_wick_gallery"),where("active","==",true)),snap=>{
-  const items=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>timestampMillis(b.createdAt)-timestampMillis(a.createdAt));const target=$("publicGallery");
-  if(!items.length){target.innerHTML='<div class="col-12"><div class="gallery-card"><div class="gallery-placeholder">New studio moments coming soon</div></div></div>';return}
-  target.innerHTML=items.map(item=>`<div class="col-sm-6 col-lg-4"><article class="gallery-card h-100"><img src="${escapeHTML(item.imageUrl)}" alt="${escapeHTML(item.caption||"Luna Wick candle gallery image")}" loading="lazy"><div class="p-3 bg-white"><div class="eyebrow">Luna Wick Studio</div><div class="mt-1">${escapeHTML(item.caption||"Thoughtfully made, beautifully lived.")}</div></div></article></div>`).join("");
- },err=>{console.error("Gallery load error",err);$("publicGallery").innerHTML='<div class="col-12"><div class="notice small-muted">The gallery is temporarily unavailable.</div></div>'});
- onSnapshot(query(collection(db,"luna_wick_reviews"),where("approved","==",true)),snap=>{
-  const reviews=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>timestampMillis(b.createdAt)-timestampMillis(a.createdAt));$("reviewCount").textContent=`${reviews.length} ${reviews.length===1?"review":"reviews"}`;const target=$("publicReviews");
-  if(!reviews.length){target.innerHTML='<div class="col-12"><div class="surface text-center py-4"><div class="review-stars fs-4">★★★★★</div><p class="small-muted mb-0 mt-2">Be the first to share your experience.</p></div></div>';return}
-  target.innerHTML=reviews.map(r=>`<div class="col-md-6"><article class="review-card"><div class="review-stars mb-2" aria-label="${Number(r.rating)||0} out of 5 stars">${"★".repeat(Math.max(0,Math.min(5,Number(r.rating)||0)))}${"☆".repeat(5-Math.max(0,Math.min(5,Number(r.rating)||0)))}</div><h4 class="h5">${escapeHTML(r.title||"Customer review")}</h4><p class="small-muted">${escapeHTML(r.review||"")}</p><div class="small-muted">— ${escapeHTML(r.displayName||"Luna Wick customer")}</div></article></div>`).join("");
- },err=>{console.error("Reviews load error",err);$("publicReviews").innerHTML='<div class="col-12"><div class="notice small-muted">Customer reviews are temporarily unavailable.</div></div>'});
-}
-startPublicContentListeners();
-$("reviewForm").addEventListener("submit",async e=>{
- e.preventDefault();if(!currentState.user){toast("Please sign in before submitting a review.","error");showView("auth");return}const selected=document.querySelector('input[name="reviewRating"]:checked');if(!selected){toast("Please choose a star rating.","error");return}
- const btn=$("submitReviewBtn");setBusy(btn,true,"Submitting review…");try{const title=$("reviewTitle").value.trim(),review=$("reviewText").value.trim();if(!title||!review)throw new Error("Please complete your review title and text.");
- await addDoc(collection(db,"luna_wick_reviews"),{userId:currentState.user.uid,displayName:(currentState.profile?.fullName||currentState.user.email?.split("@")[0]||"Customer").slice(0,80),rating:Number(selected.value),title:title.slice(0,90),review:review.slice(0,1200),approved:false,createdAt:serverTimestamp()});$("reviewForm").reset();toast("Thank you! Your review was submitted and is awaiting approval.","success");
- }catch(err){console.error(err);toast(authMessage(err),"error")}finally{setBusy(btn,false)}
-});
-$("galleryUploadForm").addEventListener("submit",async e=>{
- e.preventDefault();if(!currentState.user||!currentState.admin){toast("Only an authorized administrator can upload gallery images.","error");return}const file=$("galleryImageFile").files[0];if(!file)return;
- if(!["image/jpeg","image/png","image/webp"].includes(file.type)){toast("Please choose a JPG, PNG, or WebP image.","error");return}if(file.size>5*1024*1024){toast("Please choose an image smaller than 5 MB.","error");return}
- const btn=$("galleryUploadBtn");setBusy(btn,true,"Uploading…");$("galleryUploadStatus").textContent="Uploading image to Firebase Storage…";let path="";
- try{const safeName=file.name.replace(/[^a-zA-Z0-9._-]/g,"_").slice(-100);path=`gallery/${currentState.user.uid}/${Date.now()}_${crypto.randomUUID()}_${safeName}`;const fileRef=storageRef(storage,path);await uploadBytes(fileRef,file,{contentType:file.type});const imageUrl=await getDownloadURL(fileRef);
- await addDoc(collection(db,"luna_wick_gallery"),{imageUrl,storagePath:path,caption:$("galleryCaption").value.trim().slice(0,120),active:true,uploadedBy:currentState.user.uid,createdAt:serverTimestamp()});$("galleryUploadForm").reset();$("galleryUploadStatus").textContent="Image uploaded and published to the gallery.";toast("Gallery image published.","success");
- }catch(err){console.error(err);if(path){try{await deleteObject(storageRef(storage,path))}catch(cleanupErr){console.warn(cleanupErr)}}$("galleryUploadStatus").textContent="Upload failed. Check Firebase Storage setup and Security Rules.";toast(authMessage(err),"error")}finally{setBusy(btn,false)}
-});
-async function deleteGalleryItem(id,path){if(!currentState.admin||!confirm("Remove this image from the public gallery?"))return;try{await deleteDoc(doc(db,"luna_wick_gallery",id));if(path)await deleteObject(storageRef(storage,path));toast("Gallery image removed.","success")}catch(err){console.error(err);toast("Could not remove image: "+authMessage(err),"error")}}
-async function moderateReview(id,approved){if(!currentState.admin)return;try{if(approved)await updateDoc(doc(db,"luna_wick_reviews",id),{approved:true,moderatedAt:serverTimestamp(),moderatedBy:currentState.user.uid});else await deleteDoc(doc(db,"luna_wick_reviews",id));toast(approved?"Review approved and published.":"Review removed.","success")}catch(err){console.error(err);toast("Could not moderate review: "+authMessage(err),"error")}}
-function startAdminContentListeners(){
- const galleryUnsub=onSnapshot(collection(db,"luna_wick_gallery"),snap=>{const items=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>timestampMillis(b.createdAt)-timestampMillis(a.createdAt));const target=$("adminGalleryList");if(!items.length){target.innerHTML='<div class="col-12 small-muted">No gallery images yet. Upload the first product photo above.</div>';return}
- target.innerHTML=items.map(item=>`<div class="col-md-6"><div class="d-flex gap-3 align-items-center border rounded-3 p-2"><img class="gallery-admin-thumb" src="${escapeHTML(item.imageUrl)}" alt=""><div class="flex-grow-1"><div class="fw-semibold">${escapeHTML(item.caption||"Untitled gallery image")}</div><div class="small-muted">${item.active?"Published":"Hidden"}</div></div><button class="btn btn-outline-danger btn-sm" data-delete-gallery="${escapeHTML(item.id)}" data-storage-path="${escapeHTML(item.storagePath||"")}">Remove</button></div></div>`).join("");target.querySelectorAll("[data-delete-gallery]").forEach(btn=>btn.addEventListener("click",()=>deleteGalleryItem(btn.dataset.deleteGallery,btn.dataset.storagePath)));
- },err=>{console.error(err);$("adminGalleryList").innerHTML=`<div class="small-muted">Could not load gallery: ${escapeHTML(authMessage(err))}</div>`});
- const reviewsUnsub=onSnapshot(collection(db,"luna_wick_reviews"),snap=>{const items=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>timestampMillis(b.createdAt)-timestampMillis(a.createdAt));const target=$("adminReviewsList");if(!items.length){target.innerHTML='<div class="small-muted">No customer reviews have been submitted yet.</div>';return}
- target.innerHTML=items.map(r=>`<article class="border rounded-3 p-3 mb-3"><div class="d-flex justify-content-between flex-wrap gap-2"><div><div class="review-stars">${"★".repeat(Math.max(0,Math.min(5,Number(r.rating)||0)))}${"☆".repeat(5-Math.max(0,Math.min(5,Number(r.rating)||0)))}</div><h3 class="h6 mt-1 mb-1">${escapeHTML(r.title||"Customer review")}</h3><div class="small-muted">${escapeHTML(r.displayName||"Customer")} · ${readableDate(r.createdAt)}</div></div><span class="pill">${r.approved?"Published":"Awaiting approval"}</span></div><p class="mt-3 mb-3">${escapeHTML(r.review||"")}</p><div class="d-flex gap-2">${r.approved?"":`<button class="btn btn-terra btn-sm" data-approve-review="${escapeHTML(r.id)}">Approve & publish</button>`}<button class="btn btn-outline-danger btn-sm" data-remove-review="${escapeHTML(r.id)}">${r.approved?"Remove":"Reject / remove"}</button></div></article>`).join("");target.querySelectorAll("[data-approve-review]").forEach(btn=>btn.addEventListener("click",()=>moderateReview(btn.dataset.approveReview,true)));target.querySelectorAll("[data-remove-review]").forEach(btn=>btn.addEventListener("click",()=>moderateReview(btn.dataset.removeReview,false)));
- },err=>{console.error(err);$("adminReviewsList").innerHTML=`<div class="small-muted">Could not load reviews: ${escapeHTML(authMessage(err))}</div>`});currentState.adminUnsubscribers.push(galleryUnsub,reviewsUnsub);
-}
-
-$("refreshAdminBtn").addEventListener("click",()=>{currentState.adminUnsubscribers.forEach(fn=>fn());currentState.adminUnsubscribers=[];startAdminListeners();toast("Refreshing live admin data…")});
-calculate();
-</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luna Wick Co. | Exclusive B2B Candle Manufacturing</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cream: #FAF8F5;
+      --charcoal: #1C1C1C;
+      --terracotta: #C07A60;
+      --sage: #7A8B7B;
+      --beige: #E6DFD3;
+      --warm-white: #FFFCFA;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--charcoal);
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5, .serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* Navbar */
+    .navbar-luna {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--beige);
+      box-shadow: 0 2px 12px rgba(28, 28, 28, 0.04);
+    }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--charcoal) !important;
+      letter-spacing: -0.5px;
+    }
+    .navbar-brand span {
+      color: var(--terracotta);
+    }
+    .nav-subtitle {
+      font-size: 0.75rem;
+      color: var(--sage);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+
+    /* Cards & Sections */
+    .section-card {
+      background: var(--warm-white);
+      border: 1px solid var(--beige);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(28, 28, 28, 0.03);
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      margin-bottom: 0.25rem;
+    }
+    .section-subtitle {
+      color: var(--sage);
+      font-size: 0.95rem;
+    }
+
+    /* Pricing */
+    .price-tier {
+      border: 1px solid var(--beige);
+      border-radius: 12px;
+      padding: 1rem;
+      transition: all 0.2s ease;
+      cursor: default;
+    }
+    .price-tier.active {
+      border-color: var(--terracotta);
+      background: rgba(192, 122, 96, 0.06);
+    }
+    .price-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--terracotta);
+    }
+    .save-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    /* Progress */
+    .progress {
+      height: 10px;
+      border-radius: 20px;
+      background: var(--beige);
+    }
+    .progress-bar {
+      background: linear-gradient(90deg, var(--terracotta), #d4957a);
+      border-radius: 20px;
+    }
+
+    /* Wizard */
+    .wizard-step {
+      display: none;
+    }
+    .wizard-step.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .step-indicator {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .step-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: var(--beige);
+      color: var(--sage);
+      transition: all 0.2s;
+    }
+    .step-dot.active {
+      background: var(--terracotta);
+      color: white;
+    }
+    .step-dot.completed {
+      background: var(--sage);
+      color: white;
+    }
+
+    /* Choice Cards */
+    .choice-card {
+      border: 2px solid var(--beige);
+      border-radius: 12px;
+      padding: 1.25rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      height: 100%;
+      background: white;
+    }
+    .choice-card:hover {
+      border-color: var(--sage);
+      transform: translateY(-2px);
+    }
+    .choice-card.selected {
+      border-color: var(--terracotta);
+      background: rgba(192, 122, 96, 0.05);
+      box-shadow: 0 0 0 1px var(--terracotta);
+    }
+    .choice-card .price-adj {
+      font-size: 0.8rem;
+      color: var(--terracotta);
+      font-weight: 600;
+    }
+
+    /* Scent radios */
+    .scent-option {
+      border: 2px solid var(--beige);
+      border-radius: 10px;
+      padding: 0.9rem 1rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      background: white;
+    }
+    .scent-option:hover {
+      border-color: var(--sage);
+    }
+    .scent-option.selected {
+      border-color: var(--terracotta);
+      background: rgba(192, 122, 96, 0.06);
+    }
+
+    /* Sticky Summary */
+    .summary-panel {
+      position: sticky;
+      top: 90px;
+      background: var(--warm-white);
+      border: 1px solid var(--beige);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+    }
+    .summary-total {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--terracotta);
+    }
+
+    /* Payment method buttons */
+    .pay-method {
+      border: 2px solid var(--beige);
+      border-radius: 12px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-align: center;
+      background: white;
+    }
+    .pay-method:hover {
+      border-color: var(--sage);
+    }
+    .pay-method.selected {
+      border-color: var(--terracotta);
+      background: rgba(192, 122, 96, 0.06);
+    }
+    .pay-method i {
+      font-size: 1.5rem;
+      color: var(--terracotta);
+    }
+
+    /* Buttons */
+    .btn-terracotta {
+      background: var(--terracotta);
+      border-color: var(--terracotta);
+      color: white;
+      font-weight: 600;
+      border-radius: 10px;
+      padding: 0.65rem 1.5rem;
+    }
+    .btn-terracotta:hover, .btn-terracotta:focus {
+      background: #a96852;
+      border-color: #a96852;
+      color: white;
+    }
+    .btn-outline-terracotta {
+      border: 2px solid var(--terracotta);
+      color: var(--terracotta);
+      font-weight: 600;
+      border-radius: 10px;
+    }
+    .btn-outline-terracotta:hover {
+      background: var(--terracotta);
+      color: white;
+    }
+    .btn-sage {
+      background: var(--sage);
+      border-color: var(--sage);
+      color: white;
+      font-weight: 600;
+      border-radius: 10px;
+    }
+    .btn-sage:hover {
+      background: #6a7a6b;
+      color: white;
+    }
+
+    /* Form controls */
+    .form-control, .form-select {
+      border-radius: 10px;
+      border: 1px solid var(--beige);
+      padding: 0.7rem 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 0.2rem rgba(192, 122, 96, 0.2);
+    }
+    .form-label {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--charcoal);
+    }
+
+    /* Freight */
+    .freight-option {
+      border-left: 4px solid var(--terracotta);
+      background: rgba(192, 122, 96, 0.05);
+      border-radius: 0 12px 12px 0;
+      padding: 1rem 1.25rem;
+    }
+    .freight-heavy {
+      border-left-color: var(--sage);
+      background: rgba(122, 139, 123, 0.08);
+    }
+
+    /* Utility */
+    .text-terracotta { color: var(--terracotta) !important; }
+    .text-sage { color: var(--sage) !important; }
+    .bg-beige { background-color: var(--beige) !important; }
+    
+    .alert-luna {
+      border-radius: 12px;
+      border: none;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 991.98px) {
+      .summary-panel {
+        position: static;
+        margin-top: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-luna sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex flex-column" href="#">
+        <span>Luna <span>Wick</span> Co.</span>
+        <span class="nav-subtitle">Exclusive B2B Candle Manufacturing & Bulk Supply</span>
+      </a>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <span class="badge rounded-pill bg-beige text-charcoal px-3 py-2" style="color: var(--charcoal); font-weight: 500;">
+          <i class="bi bi-geo-alt me-1"></i> Philippines
+        </span>
+        <a href="#checkout" class="btn btn-terracotta btn-sm">Request Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4 py-lg-5">
+    
+    <!-- ========== SECTION A: VOLUME PRICING CALCULATOR ========== -->
+    <section id="pricing" class="mb-5">
+      <div class="section-card p-4 p-lg-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4">
+          <div>
+            <h2 class="section-title">Volume Pricing Matrix</h2>
+            <p class="section-subtitle mb-0">Bulk-exclusive rates for B2B partners · Minimum order 50 units</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- Input & Live Results -->
+          <div class="col-lg-5">
+            <label for="qtyInput" class="form-label fw-semibold">Order Quantity (units)</label>
+            <div class="input-group mb-3">
+              <input type="number" class="form-control form-control-lg" id="qtyInput" 
+                     min="50" max="10000" value="100" step="1">
+              <span class="input-group-text bg-beige">pcs</span>
+            </div>
+            
+            <input type="range" class="form-range mb-4" id="qtySlider" 
+                   min="50" max="1000" value="100" step="10">
+
+            <!-- Progress to next tier -->
+            <div class="mb-3">
+              <div class="d-flex justify-content-between small text-sage mb-1">
+                <span>Progress to next tier</span>
+                <span id="tierProgressLabel">—</span>
+              </div>
+              <div class="progress">
+                <div class="progress-bar" id="tierProgressBar" role="progressbar" style="width: 0%"></div>
+              </div>
+            </div>
+
+            <!-- Live Totals -->
+            <div class="bg-beige rounded-3 p-3">
+              <div class="row text-center g-2">
+                <div class="col-4">
+                  <div class="small text-sage">Unit Price</div>
+                  <div class="fw-bold fs-5" id="unitPriceDisplay">₱200</div>
+                </div>
+                <div class="col-4">
+                  <div class="small text-sage">Total Cost</div>
+                  <div class="fw-bold fs-5 text-terracotta" id="totalCostDisplay">₱20,000</div>
+                </div>
+                <div class="col-4">
+                  <div class="small text-sage">Weight</div>
+                  <div class="fw-bold fs-5" id="weightDisplay">40.0 kg</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tier Cards -->
+          <div class="col-lg-7">
+            <div class="row g-3" id="tierCards">
+              <div class="col-6 col-md-3">
+                <div class="price-tier text-center h-100" data-min="50" data-max="99" data-price="250">
+                  <div class="small text-sage mb-1">50–99 pcs</div>
+                  <div class="price-value">₱250</div>
+                  <div class="small">per unit</div>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="price-tier text-center h-100" data-min="100" data-max="299" data-price="200">
+                  <div class="small text-sage mb-1">100–299 pcs</div>
+                  <div class="price-value">₱200</div>
+                  <div class="small">per unit</div>
+                  <span class="badge bg-success save-badge mt-1">Save 20%</span>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="price-tier text-center h-100" data-min="300" data-max="499" data-price="180">
+                  <div class="small text-sage mb-1">300–499 pcs</div>
+                  <div class="price-value">₱180</div>
+                  <div class="small">per unit</div>
+                  <span class="badge bg-success save-badge mt-1">Save 28%</span>
+                </div>
+              </div>
+              <div class="col-6 col-md-3">
+                <div class="price-tier text-center h-100" data-min="500" data-max="99999" data-price="150">
+                  <div class="small text-sage mb-1">500+ pcs</div>
+                  <div class="price-value">₱150</div>
+                  <div class="small">per unit</div>
+                  <span class="badge save-badge mt-1" style="background: var(--terracotta) !important; color: white;">Best Value · Save 40%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION B: CUSTOM BUILDER WIZARD ========== -->
+    <section id="builder" class="mb-5">
+      <div class="row g-4">
+        <!-- Wizard Column -->
+        <div class="col-lg-8">
+          <div class="section-card p-4 p-lg-5">
+            <h2 class="section-title">Custom Luna Wick Builder</h2>
+            <p class="section-subtitle mb-4">Configure your exclusive bulk order · All prices shown are per unit add-ons</p>
+
+            <!-- Step Indicators -->
+            <div class="step-indicator" id="stepIndicators">
+              <div class="step-dot active" data-step="1">1</div>
+              <div class="step-dot" data-step="2">2</div>
+              <div class="step-dot" data-step="3">3</div>
+              <div class="step-dot" data-step="4">4</div>
+            </div>
+
+            <!-- Step 1: Vessel -->
+            <div class="wizard-step active" id="step1">
+              <h5 class="mb-3 fw-semibold">1. Choose Vessel</h5>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="choice-card selected" data-group="vessel" data-value="100ml-amber" data-adj="0" data-label="100ml Amber Glass">
+                    <div class="fs-3 mb-2">🫙</div>
+                    <div class="fw-semibold">100ml Amber Glass</div>
+                    <div class="small text-sage">Classic warm glow</div>
+                    <div class="price-adj mt-2">Base included</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="choice-card" data-group="vessel" data-value="200ml-ceramic" data-adj="30" data-label="200ml Matte Ceramic">
+                    <div class="fs-3 mb-2">🏺</div>
+                    <div class="fw-semibold">200ml Matte Ceramic</div>
+                    <div class="small text-sage">Premium hand-feel</div>
+                    <div class="price-adj mt-2">+₱30 / pc</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="choice-card" data-group="vessel" data-value="250ml-frosted" data-adj="15" data-label="250ml Frosted Glass">
+                    <div class="fs-3 mb-2">🧊</div>
+                    <div class="fw-semibold">250ml Frosted Glass</div>
+                    <div class="small text-sage">Soft diffused light</div>
+                    <div class="price-adj mt-2">+₱15 / pc</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Scent -->
+            <div class="wizard-step" id="step2">
+              <h5 class="mb-3 fw-semibold">2. Select Scent Profile</h5>
+              <div class="row g-3">
+                <div class="col-6 col-md-3">
+                  <div class="scent-option text-center selected" data-group="scent" data-value="Lavender & Sage">
+                    <div class="fs-4 mb-1">🌿</div>
+                    <div class="small fw-semibold">Lavender & Sage</div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="scent-option text-center" data-group="scent" data-value="Espresso Bourbon">
+                    <div class="fs-4 mb-1">☕</div>
+                    <div class="small fw-semibold">Espresso Bourbon</div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="scent-option text-center" data-group="scent" data-value="Fresh Bamboo">
+                    <div class="fs-4 mb-1">🎋</div>
+                    <div class="small fw-semibold">Fresh Bamboo</div>
+                  </div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <div class="scent-option text-center" data-group="scent" data-value="Vanilla Woods">
+                    <div class="fs-4 mb-1">🪵</div>
+                    <div class="small fw-semibold">Vanilla Woods</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Lid -->
+            <div class="wizard-step" id="step3">
+              <h5 class="mb-3 fw-semibold">3. Choose Lid</h5>
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="choice-card selected" data-group="lid" data-value="raw-bamboo" data-adj="10" data-label="Raw Bamboo">
+                    <div class="fs-3 mb-2">🎋</div>
+                    <div class="fw-semibold">Raw Bamboo</div>
+                    <div class="price-adj mt-2">+₱10 / pc</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="choice-card" data-group="lid" data-value="matte-black" data-adj="5" data-label="Matte Black Metal">
+                    <div class="fs-3 mb-2">⚫</div>
+                    <div class="fw-semibold">Matte Black Metal</div>
+                    <div class="price-adj mt-2">+₱5 / pc</div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="choice-card" data-group="lid" data-value="no-lid" data-adj="0" data-label="No Lid">
+                    <div class="fs-3 mb-2">⭕</div>
+                    <div class="fw-semibold">No Lid</div>
+                    <div class="price-adj mt-2">Included</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Labeling -->
+            <div class="wizard-step" id="step4">
+              <h5 class="mb-3 fw-semibold">4. Labeling Option</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="choice-card selected" data-group="label" data-value="upload-artwork" data-label="Upload My Own Artwork">
+                    <div class="fs-3 mb-2">🎨</div>
+                    <div class="fw-semibold">Upload My Own Artwork</div>
+                    <div class="small text-sage mt-1">We will print your custom design</div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="choice-card" data-group="label" data-value="plain-unlabeled" data-label="Plain / Unlabeled">
+                    <div class="fs-3 mb-2">📄</div>
+                    <div class="fw-semibold">Plain / Unlabeled</div>
+                    <div class="small text-sage mt-1">Clean vessel, ready for your branding</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation -->
+            <div class="d-flex justify-content-between mt-4 pt-3 border-top">
+              <button type="button" class="btn btn-outline-secondary" id="btnPrev" disabled>
+                <i class="bi bi-arrow-left me-1"></i> Previous
+              </button>
+              <button type="button" class="btn btn-terracotta" id="btnNext">
+                Next <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Summary Sidebar -->
+        <div class="col-lg-4">
+          <div class="summary-panel">
+            <h5 class="fw-semibold mb-3">Your Configuration</h5>
+            
+            <div class="summary-row">
+              <span class="text-sage">Quantity</span>
+              <span id="sumQty">100 pcs</span>
+            </div>
+            <div class="summary-row">
+              <span class="text-sage">Base Unit Price</span>
+              <span id="sumBasePrice">₱200</span>
+            </div>
+            <div class="summary-row">
+              <span class="text-sage">Vessel</span>
+              <span id="sumVessel">100ml Amber Glass</span>
+            </div>
+            <div class="summary-row">
+              <span class="text-sage">Scent</span>
+              <span id="sumScent">Lavender & Sage</span>
+            </div>
+            <div class="summary-row">
+              <span class="text-sage">Lid</span>
+              <span id="sumLid">Raw Bamboo (+₱10)</span>
+            </div>
+            <div class="summary-row">
+              <span class="text-sage">Labeling</span>
+              <span id="sumLabel">Upload My Own Artwork</span>
+            </div>
+            
+            <hr class="my-3">
+            
+            <div class="summary-row">
+              <span class="fw-semibold">Custom Unit Price</span>
+              <span class="fw-bold" id="sumUnitFinal">₱210</span>
+            </div>
+            <div class="summary-row">
+              <span class="fw-semibold">Estimated Total</span>
+              <span class="summary-total" id="sumTotalFinal">₱21,000</span>
+            </div>
+            <div class="summary-row">
+              <span class="text-sage">Total Weight</span>
+              <span id="sumWeight">40.0 kg</span>
+            </div>
+
+            <button type="button" class="btn btn-sage w-100 mt-4" id="btnSaveDraft">
+              <i class="bi bi-cloud-upload me-2"></i>Save Draft Quote
+            </button>
+            <div id="draftStatus" class="small mt-2 text-center"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION D: FREIGHT ESTIMATOR ========== -->
+    <section id="freight" class="mb-5">
+      <div class="section-card p-4 p-lg-5">
+        <h2 class="section-title">Smart PH Freight Estimator</h2>
+        <p class="section-subtitle mb-4">Based on your current order weight · Metro Manila / Laguna focus</p>
+        
+        <div id="freightResult">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SECTION C: CHECKOUT FORM ========== -->
+    <section id="checkout" class="mb-5">
+      <div class="section-card p-4 p-lg-5">
+        <h2 class="section-title">Phased Deposit Checkout</h2>
+        <p class="section-subtitle mb-4">Secure your bulk production slot · BIR-compliant billing available</p>
+
+        <form id="checkoutForm" novalidate>
+          <!-- Payment Model Toggle -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold">Payment Model</label>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="pay-method selected" data-pay="50" id="pay50">
+                  <div class="fw-semibold">Pay 50% Downpayment</div>
+                  <div class="fs-4 text-terracotta fw-bold" id="downpaymentAmount">₱10,500</div>
+                  <div class="small text-sage">Balance due before shipment</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="pay-method" data-pay="100" id="pay100">
+                  <div class="fw-semibold">Pay 100% Full Amount</div>
+                  <div class="fs-4 text-terracotta fw-bold" id="fullAmount">₱21,000</div>
+                  <div class="small text-sage">Priority production queue</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Corporate Fields -->
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              <label for="companyName" class="form-label">Company Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="companyName" required placeholder="e.g. Acme Retail Corp">
+              <div class="invalid-feedback">Company name is required.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="companyTIN" class="form-label">Company TIN <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="companyTIN" required 
+                     placeholder="XXX-XXX-XXX-XXX" pattern="[0-9\-]{9,20}">
+              <div class="invalid-feedback">Valid TIN is required for BIR billing.</div>
+            </div>
+            <div class="col-12">
+              <label for="deliveryAddress" class="form-label">Delivery Address <span class="text-danger">*</span></label>
+              <textarea class="form-control" id="deliveryAddress" rows="2" required
+                        placeholder="Street, Barangay, City, Province, ZIP"></textarea>
+              <div class="invalid-feedback">Delivery address is required.</div>
+            </div>
+            <div class="col-md-6">
+              <label for="contactPerson" class="form-label">Contact Person</label>
+              <input type="text" class="form-control" id="contactPerson" placeholder="Full name">
+            </div>
+            <div class="col-md-6">
+              <label for="contactEmail" class="form-label">Contact Email</label>
+              <input type="email" class="form-control" id="contactEmail" placeholder="procurement@company.com">
+            </div>
+          </div>
+
+          <!-- Payment Methods -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold">Preferred Payment Method</label>
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="pay-method selected" data-method="bank-transfer">
+                  <i class="bi bi-bank d-block mb-2"></i>
+                  <div class="fw-semibold small">Bank Transfer</div>
+                  <div class="small text-sage">BDO / BPI</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="pay-method" data-method="gcash-maya">
+                  <i class="bi bi-phone d-block mb-2"></i>
+                  <div class="fw-semibold small">GCash Pro / Maya</div>
+                  <div class="small text-sage">Business accounts</div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="pay-method" data-method="corporate-po">
+                  <i class="bi bi-file-earmark-text d-block mb-2"></i>
+                  <div class="fw-semibold small">Corporate PO</div>
+                  <div class="small text-sage">Purchase Order</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-terracotta btn-lg" id="btnSubmitOrder">
+              <i class="bi bi-lock-fill me-2"></i>Submit Bulk Order Request
+            </button>
+          </div>
+          <div id="orderStatus" class="mt-3 text-center"></div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 text-sage small">
+      <p class="mb-1">© 2026 Luna Wick Co. · Exclusive B2B Candle Manufacturing · Philippines</p>
+      <p class="mb-0">For wholesale inquiries: sales@lunawick.ph</p>
+    </footer>
+  </main>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Firebase + App Logic (ES Module) -->
+  <script type="module">
+    // ============================================
+    // FIREBASE v10+ MODULAR SDK INITIALIZATION
+    // ============================================
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js';
+    import { getFirestore, collection, addDoc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
+
+    // --- REPLACE THESE VALUES WITH YOUR FIREBASE PROJECT CONFIG ---
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+    // ---------------------------------------------------------------
+
+    let db = null;
+    let firebaseReady = false;
+
+    try {
+      const app = initializeApp(firebaseConfig);
+      db = getFirestore(app);
+      firebaseReady = true;
+      console.log('Firebase initialized successfully');
+    } catch (err) {
+      console.warn('Firebase not configured yet. Draft/Order saves will show a configuration message.', err);
+      firebaseReady = false;
+    }
+
+    // ============================================
+    // APPLICATION STATE
+    // ============================================
+    const state = {
+      quantity: 100,
+      baseUnitPrice: 200,
+      vessel: { value: '100ml-amber', label: '100ml Amber Glass', adj: 0 },
+      scent: 'Lavender & Sage',
+      lid: { value: 'raw-bamboo', label: 'Raw Bamboo', adj: 10 },
+      label: { value: 'upload-artwork', label: 'Upload My Own Artwork' },
+      paymentModel: 50,          // 50 or 100
+      paymentMethod: 'bank-transfer',
+      currentStep: 1
+    };
+
+    // ============================================
+    // PRICING LOGIC
+    // ============================================
+    function getVolumePrice(qty) {
+      if (qty >= 500) return 150;
+      if (qty >= 300) return 180;
+      if (qty >= 100) return 200;
+      return 250; // 50-99
+    }
+
+    function getCustomUnitPrice() {
+      return state.baseUnitPrice + state.vessel.adj + state.lid.adj;
+    }
+
+    function getTotalCost() {
+      return getCustomUnitPrice() * state.quantity;
+    }
+
+    function getWeight() {
+      return (state.quantity * 0.4).toFixed(1);
+    }
+
+    function formatPeso(amount) {
+      return '₱' + amount.toLocaleString('en-PH', { maximumFractionDigits: 0 });
+    }
+
+    // ============================================
+    // UI UPDATE FUNCTIONS
+    // ============================================
+    function updatePricingUI() {
+      const qty = state.quantity;
+      state.baseUnitPrice = getVolumePrice(qty);
+
+      // Highlight active tier
+      document.querySelectorAll('.price-tier').forEach(card => {
+        const min = parseInt(card.dataset.min);
+        const max = parseInt(card.dataset.max);
+        card.classList.toggle('active', qty >= min && qty <= max);
+      });
+
+      // Progress bar logic
+      let progress = 0;
+      let label = '';
+      if (qty < 100) {
+        progress = ((qty - 50) / 50) * 100;
+        label = `${100 - qty} more to unlock ₱200/pc`;
+      } else if (qty < 300) {
+        progress = ((qty - 100) / 200) * 100;
+        label = `${300 - qty} more to unlock ₱180/pc`;
+      } else if (qty < 500) {
+        progress = ((qty - 300) / 200) * 100;
+        label = `${500 - qty} more to unlock Best Value ₱150/pc`;
+      } else {
+        progress = 100;
+        label = 'Best Value tier reached!';
+      }
+      document.getElementById('tierProgressBar').style.width = Math.min(progress, 100) + '%';
+      document.getElementById('tierProgressLabel').textContent = label;
+
+      // Live numbers
+      document.getElementById('unitPriceDisplay').textContent = formatPeso(state.baseUnitPrice);
+      document.getElementById('totalCostDisplay').textContent = formatPeso(state.baseUnitPrice * qty);
+      document.getElementById('weightDisplay').textContent = (qty * 0.4).toFixed(1) + ' kg';
+
+      updateSummary();
+      updateFreight();
+      updateCheckoutAmounts();
+    }
+
+    function updateSummary() {
+      const unitFinal = getCustomUnitPrice();
+      const total = getTotalCost();
+      const weight = getWeight();
+
+      document.getElementById('sumQty').textContent = state.quantity + ' pcs';
+      document.getElementById('sumBasePrice').textContent = formatPeso(state.baseUnitPrice);
+      document.getElementById('sumVessel').textContent = state.vessel.label + (state.vessel.adj ? ` (+₱${state.vessel.adj})` : '');
+      document.getElementById('sumScent').textContent = state.scent;
+      document.getElementById('sumLid').textContent = state.lid.label + (state.lid.adj ? ` (+₱${state.lid.adj})` : '');
+      document.getElementById('sumLabel').textContent = state.label.label;
+      document.getElementById('sumUnitFinal').textContent = formatPeso(unitFinal);
+      document.getElementById('sumTotalFinal').textContent = formatPeso(total);
+      document.getElementById('sumWeight').textContent = weight + ' kg';
+    }
+
+    function updateFreight() {
+      const weight = parseFloat(getWeight());
+      const container = document.getElementById('freightResult');
+
+      if (weight < 20) {
+        container.innerHTML = `
+          <div class="freight-option">
+            <div class="d-flex align-items-start gap-3">
+              <div class="fs-3">🚚</div>
+              <div>
+                <div class="fw-semibold mb-1">Local On-Demand Delivery</div>
+                <div class="mb-1">Lalamove / Grab Car Extra</div>
+                <div class="text-terracotta fw-bold">Estimated ₱300 – ₱600</div>
+                <div class="small text-sage mt-1">Within Metro Manila / Laguna · Same-day or next-day options available</div>
+              </div>
+            </div>
+          </div>`;
+      } else {
+        container.innerHTML = `
+          <div class="freight-option freight-heavy">
+            <div class="d-flex align-items-start gap-3">
+              <div class="fs-3">📦</div>
+              <div>
+                <div class="fw-semibold mb-1">Heavy Freight / Sea Cargo</div>
+                <div class="mb-1">AP Cargo / Capex / Other Forwarders</div>
+                <div class="text-terracotta fw-bold">Estimated ₱1,500+</div>
+                <div class="small text-sage mt-1">Requires manual forwarder quote confirmation · Ideal for provincial or bulk shipments</div>
+              </div>
+            </div>
+          </div>`;
+      }
+    }
+
+    function updateCheckoutAmounts() {
+      const total = getTotalCost();
+      document.getElementById('downpaymentAmount').textContent = formatPeso(Math.round(total * 0.5));
+      document.getElementById('fullAmount').textContent = formatPeso(total);
+    }
+
+    // ============================================
+    // WIZARD NAVIGATION
+    // ============================================
+    function goToStep(step) {
+      state.currentStep = step;
+
+      document.querySelectorAll('.wizard-step').forEach(el => el.classList.remove('active'));
+      document.getElementById('step' + step).classList.add('active');
+
+      document.querySelectorAll('.step-dot').forEach(dot => {
+        const s = parseInt(dot.dataset.step);
+        dot.classList.remove('active', 'completed');
+        if (s === step) dot.classList.add('active');
+        else if (s < step) dot.classList.add('completed');
+      });
+
+      document.getElementById('btnPrev').disabled = step === 1;
+      const nextBtn = document.getElementById('btnNext');
+      if (step === 4) {
+        nextBtn.innerHTML = '<i class="bi bi-check-lg me-1"></i> Done';
+      } else {
+        nextBtn.innerHTML = 'Next <i class="bi bi-arrow-right ms-1"></i>';
+      }
+    }
+
+    // ============================================
+    // EVENT LISTENERS
+    // ============================================
+
+    // Quantity inputs
+    const qtyInput = document.getElementById('qtyInput');
+    const qtySlider = document.getElementById('qtySlider');
+
+    qtyInput.addEventListener('input', () => {
+      let val = parseInt(qtyInput.value) || 50;
+      if (val < 50) val = 50;
+      if (val > 10000) val = 10000;
+      state.quantity = val;
+      qtySlider.value = Math.min(val, 1000);
+      updatePricingUI();
+    });
+
+    qtySlider.addEventListener('input', () => {
+      state.quantity = parseInt(qtySlider.value);
+      qtyInput.value = state.quantity;
+      updatePricingUI();
+    });
+
+    // Choice cards (vessel, lid, label)
+    document.querySelectorAll('.choice-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const group = card.dataset.group;
+        document.querySelectorAll(`.choice-card[data-group="${group}"]`).forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+
+        if (group === 'vessel') {
+          state.vessel = {
+            value: card.dataset.value,
+            label: card.dataset.label,
+            adj: parseInt(card.dataset.adj) || 0
+          };
+        } else if (group === 'lid') {
+          state.lid = {
+            value: card.dataset.value,
+            label: card.dataset.label,
+            adj: parseInt(card.dataset.adj) || 0
+          };
+        } else if (group === 'label') {
+          state.label = {
+            value: card.dataset.value,
+            label: card.dataset.label
+          };
+        }
+        updateSummary();
+        updateCheckoutAmounts();
+      });
+    });
+
+    // Scent options
+    document.querySelectorAll('.scent-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        document.querySelectorAll('.scent-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        state.scent = opt.dataset.value;
+        updateSummary();
+      });
+    });
+
+    // Wizard buttons
+    document.getElementById('btnNext').addEventListener('click', () => {
+      if (state.currentStep < 4) {
+        goToStep(state.currentStep + 1);
+      }
+    });
+    document.getElementById('btnPrev').addEventListener('click', () => {
+      if (state.currentStep > 1) {
+        goToStep(state.currentStep - 1);
+      }
+    });
+
+    // Payment model toggle
+    document.querySelectorAll('[data-pay]').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('[data-pay]').forEach(e => e.classList.remove('selected'));
+        el.classList.add('selected');
+        state.paymentModel = parseInt(el.dataset.pay);
+      });
+    });
+
+    // Payment method toggle
+    document.querySelectorAll('[data-method]').forEach(el => {
+      el.addEventListener('click', () => {
+        document.querySelectorAll('[data-method]').forEach(e => e.classList.remove('selected'));
+        el.classList.add('selected');
+        state.paymentMethod = el.dataset.method;
+      });
+    });
+
+    // ============================================
+    // FIRESTORE: SAVE DRAFT QUOTE
+    // ============================================
+    document.getElementById('btnSaveDraft').addEventListener('click', async () => {
+      const btn = document.getElementById('btnSaveDraft');
+      const status = document.getElementById('draftStatus');
+
+      if (!firebaseReady) {
+        status.innerHTML = '<span class="text-danger">Firebase not configured. Please add your Firebase config in the script.</span>';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Saving...';
+      status.innerHTML = '';
+
+      const draftData = {
+        quantity: state.quantity,
+        baseUnitPrice: state.baseUnitPrice,
+        vessel: state.vessel,
+        scent: state.scent,
+        lid: state.lid,
+        label: state.label,
+        customUnitPrice: getCustomUnitPrice(),
+        totalCost: getTotalCost(),
+        weightKg: parseFloat(getWeight()),
+        createdAt: serverTimestamp(),
+        status: 'draft'
+      };
+
+      try {
+        const docRef = await addDoc(collection(db, 'luna_wick_draft_quotes'), draftData);
+        status.innerHTML = `<span class="text-success"><i class="bi bi-check-circle me-1"></i>Draft saved successfully! (ID: ${docRef.id.substring(0,8)}…)</span>`;
+      } catch (error) {
+        console.error('Error saving draft:', error);
+        status.innerHTML = `<span class="text-danger"><i class="bi bi-exclamation-triangle me-1"></i>Error: ${error.message}</span>`;
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="bi bi-cloud-upload me-2"></i>Save Draft Quote';
+      }
+    });
+
+    // ============================================
+    // FIRESTORE: SUBMIT BULK ORDER
+    // ============================================
+    document.getElementById('checkoutForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const btn = document.getElementById('btnSubmitOrder');
+      const status = document.getElementById('orderStatus');
+
+      // Bootstrap validation
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        return;
+      }
+
+      if (!firebaseReady) {
+        status.innerHTML = '<div class="alert alert-danger alert-luna">Firebase not configured. Please add your Firebase project credentials in the script section.</div>';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Submitting Order...';
+      status.innerHTML = '';
+
+      const orderData = {
+        // Configuration
+        quantity: state.quantity,
+        baseUnitPrice: state.baseUnitPrice,
+        vessel: state.vessel,
+        scent: state.scent,
+        lid: state.lid,
+        label: state.label,
+        customUnitPrice: getCustomUnitPrice(),
+        totalCost: getTotalCost(),
+        weightKg: parseFloat(getWeight()),
+
+        // Payment
+        paymentModel: state.paymentModel, // 50 or 100
+        amountDueNow: state.paymentModel === 50 ? Math.round(getTotalCost() * 0.5) : getTotalCost(),
+        paymentMethod: state.paymentMethod,
+
+        // Corporate details
+        companyName: document.getElementById('companyName').value.trim(),
+        companyTIN: document.getElementById('companyTIN').value.trim(),
+        deliveryAddress: document.getElementById('deliveryAddress').value.trim(),
+        contactPerson: document.getElementById('contactPerson').value.trim() || null,
+        contactEmail: document.getElementById('contactEmail').value.trim() || null,
+
+        // Meta
+        status: 'pending_downpayment',
+        createdAt: serverTimestamp(),
+        source: 'luna-wick-b2b-portal'
+      };
+
+      try {
+        const docRef = await addDoc(collection(db, 'luna_wick_bulk_orders'), orderData);
+        status.innerHTML = `
+          <div class="alert alert-success alert-luna">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <strong>Order request submitted successfully!</strong><br>
+            Reference: <code>${docRef.id}</code><br>
+            Our team will contact you shortly to confirm production and payment details.
+          </div>`;
+        form.reset();
+        form.classList.remove('was-validated');
+      } catch (error) {
+        console.error('Error submitting order:', error);
+        status.innerHTML = `
+          <div class="alert alert-danger alert-luna">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <strong>Submission failed.</strong> ${error.message}<br>
+            Please try again or contact sales@lunawick.ph
+          </div>`;
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="bi bi-lock-fill me-2"></i>Submit Bulk Order Request';
+      }
+    });
+
+    // ============================================
+    // INITIAL RENDER
+    // ============================================
+    updatePricingUI();
+    goToStep(1);
+  </script>
+</body>
+</html>

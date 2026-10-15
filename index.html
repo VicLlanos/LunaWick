@@ -1,637 +1,222 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luna Wick Co. | Exclusive B2B Candle Manufacturing</title>
-    <!-- Bootstrap 5 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-cream: #FAF8F5;
-            --text-dark: #1C1C1C;
-            --terracotta: #C07A60;
-            --sage-green: #7A8B7B;
-            --warm-beige: #E6DFD3;
-        }
-
-        body {
-            background-color: var(--bg-cream);
-            color: var(--text-dark);
-            font-family: 'Inter', sans-serif;
-        }
-
-        h1, h2, h3, h4, h5, h6, .font-serif {
-            font-family: 'Lora', serif;
-        }
-
-        .navbar-brand {
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .btn-terracotta {
-            background-color: var(--terracotta);
-            color: white;
-            border: none;
-        }
-        .btn-terracotta:hover {
-            background-color: #a36149;
-            color: white;
-        }
-
-        .btn-outline-terracotta {
-            border: 2px solid var(--terracotta);
-            color: var(--text-dark);
-            background: transparent;
-        }
-        .btn-outline-terracotta:hover, .btn-outline-terracotta.active {
-            background-color: var(--terracotta);
-            color: white;
-            border-color: var(--terracotta);
-        }
-
-        .card-custom {
-            border: 1px solid var(--warm-beige);
-            background-color: white;
-            border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card-custom.selected {
-            border: 2px solid var(--terracotta);
-            background-color: #fdfaf7;
-        }
-
-        .wizard-step {
-            display: none;
-        }
-        .wizard-step.active {
-            display: block;
-        }
-        
-        .progress-bar-fill {
-            background-color: var(--sage-green);
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#FAF8F5">
+<title>Luna Wick Co. — Candle Studio & Wholesale</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root{--cream:#FAF8F5;--ink:#1C1C1C;--terra:#C07A60;--sage:#7A8B7B;--line:#E6DFD3;--muted:#77736d;--white:#fff;--shadow:0 14px 40px #33251a0d}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,sans-serif}h1,h2,h3,h4,.serif,.navbar-brand{font-family:"Playfair Display",Georgia,serif}a{color:var(--terra)}.navbar{background:#fff;border-bottom:1px solid var(--line)}.navbar-brand{font-size:1.55rem;font-weight:600;letter-spacing:.01em}.brand-mark{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50% 50% 48% 12%;background:var(--terra);color:white;font-family:Inter;font-size:17px;margin-right:9px;transform:rotate(-8deg)}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;font-weight:700;color:var(--sage)}.hero{padding:4.5rem 0 3.5rem;background:radial-gradient(ellipse at 85% 15%,#e9d8ca77,transparent 35%),var(--cream)}.hero h1{font-size:clamp(2.6rem,5vw,4.7rem);line-height:1.06;letter-spacing:-.04em}.hero p{max-width:570px;color:var(--muted);font-size:1.05rem;line-height:1.8}.btn-terra{background:var(--terra);border:1px solid var(--terra);color:#fff}.btn-terra:hover{background:#a9664f;border-color:#a9664f;color:white}.btn-outline-terra{border:1px solid var(--terra);color:var(--ink)}.btn-outline-terra:hover,.btn-outline-terra.active{background:var(--terra);color:#fff}.text-terra{color:var(--terra)!important}.text-sage{color:var(--sage)!important}.surface,.card-custom{background:white;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.surface{padding:clamp(1.15rem,3vw,2rem)}.product-art{min-height:205px;border-radius:14px;background:linear-gradient(145deg,#f0e5d7,#e2d0bd);display:grid;place-items:center;overflow:hidden;position:relative}.product-art:before{content:"";position:absolute;width:145px;height:145px;border-radius:50%;background:#fff5;top:-35px;right:-25px}.candle{position:relative;width:88px;height:116px;border-radius:13px 13px 20px 20px;background:linear-gradient(90deg,#79543b,#bd8b5f 35%,#8c6246);box-shadow:inset 8px 0 12px #fff3,inset -8px 0 12px #34201233,0 18px 20px #3d2a1b26}.candle:before{content:"";position:absolute;top:-6px;left:10px;right:10px;height:14px;border-radius:50%;background:#f4e6cc;border:2px solid #8d6a4c}.candle:after{content:"";position:absolute;top:-26px;left:42px;width:5px;height:23px;background:#4a3529;border-radius:100% 0 100% 0;transform:rotate(8deg)}.candle-label{position:absolute;top:43px;left:8px;right:8px;text-align:center;background:#f8f0e2;color:#624b3c;padding:7px 2px;font-family:"Playfair Display";font-size:11px}.field-label{font-size:.83rem;font-weight:600;margin-bottom:.45rem}.form-control,.form-select{border-color:var(--line);border-radius:10px;padding:.72rem .85rem;background-color:#fff}.form-control:focus,.form-select:focus{border-color:var(--terra);box-shadow:0 0 0 .2rem #c07a6022}.option-card{height:100%;padding:1rem;border:1px solid var(--line);border-radius:13px;background:white;cursor:pointer;transition:.18s ease}.option-card:hover{transform:translateY(-2px);border-color:var(--terra)}.option-card.selected{border:2px solid var(--terra);background:#fdf7f3}.step-panel{display:none;animation:rise .24s ease}.step-panel.active{display:block}@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.price-tier{border:1px solid var(--line);border-radius:12px;padding:1rem .6rem;text-align:center;background:white}.price-tier.active{border:2px solid var(--sage);background:#f5f7f4}.summary-line{display:flex;justify-content:space-between;gap:1rem;margin:.8rem 0;font-size:.9rem}.summary-line span:first-child{color:var(--muted)}.summary-total{font-size:1.65rem;font-family:"Playfair Display",serif}.badge-sage{background:#e6eee6;color:#3f6145}.view{display:none;animation:rise .25s ease}.view.active{display:block}.status-step{display:flex;gap:12px;position:relative;padding-bottom:1.3rem}.status-dot{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#eee8df;color:#6e655b;flex:0 0 25px;font-size:.75rem;z-index:1}.status-step.done .status-dot,.status-step.current .status-dot{background:var(--sage);color:white}.status-step:not(:last-child):after{content:"";position:absolute;left:12px;top:25px;height:calc(100% - 22px);border-left:2px solid var(--line)}.status-step.done:not(:last-child):after{border-color:var(--sage)}.status-name{font-weight:600}.table>:not(caption)>*>*{padding:.85rem .75rem;border-bottom-color:var(--line)}.table thead th{font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;white-space:nowrap}.pill{border-radius:999px;padding:.35rem .65rem;font-size:.75rem;font-weight:600;background:#f1eee8}.auth-shell{max-width:980px;margin:0 auto}.auth-panel{min-height:100%;padding:2rem;background:#efe4d8;border-radius:16px}.notice{border:1px solid var(--line);border-radius:12px;padding:.85rem 1rem;background:#fff}.small-muted{font-size:.83rem;color:var(--muted)}footer{border-top:1px solid var(--line);background:white}.nav-link{cursor:pointer}.loading{opacity:.65;pointer-events:none}.hidden{display:none!important}.toast-container{z-index:1090}@media(max-width:767px){.hero{padding:3rem 0 2.5rem}.hero h1{font-size:2.7rem}.table-responsive{font-size:.88rem}.auth-panel{margin-bottom:1rem}} 
+</style>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg sticky-top">
+ <div class="container py-2">
+  <a class="navbar-brand d-flex align-items-center" href="#" data-view="marketplace"><span class="brand-mark">L</span><span>Luna Wick Co.<small class="d-block font-sans small text-muted" style="font:500 .65rem Inter;letter-spacing:.12em">CANDLE STUDIO</small></span></a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="mainNav">
+   <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2" id="navLinks">
+    <li class="nav-item"><a class="nav-link" data-view="marketplace">Shop & Customize</a></li>
+    <li class="nav-item"><a class="nav-link" data-view="auth" id="navAuth">Login / Register</a></li>
+    <li class="nav-item hidden" id="navProfileWrap"><a class="nav-link" data-view="profile">My Profile</a></li>
+    <li class="nav-item hidden" id="navOrdersWrap"><a class="nav-link" data-view="orders">Track Orders</a></li>
+    <li class="nav-item hidden" id="navAdminWrap"><a class="nav-link fw-bold" style="color:var(--terra)" data-view="admin">⚙️ Admin Control Panel</a></li>
+    <li class="nav-item hidden" id="navLogoutWrap"><button class="btn btn-outline-terra btn-sm ms-lg-2" id="logoutBtn">Logout</button></li>
+   </ul>
+  </div>
+ </div>
+</nav>
 
-    <!-- Header Section -->
-    <nav class="navbar navbar-light bg-white border-bottom py-3">
-        <div class="container">
-            <div>
-                <a class="navbar-brand text-dark fs-3 m-0" href="#">Luna Wick Co.</a>
-                <div class="text-muted small">Exclusive B2B Candle Manufacturing & Bulk Supply · Philippines</div>
-            </div>
-            <span class="badge bg-secondary p-2">B2B Portal</span>
-        </div>
-    </nav>
+<main>
+<section id="view-marketplace" class="view active">
+ <header class="hero"><div class="container"><div class="row align-items-center g-5"><div class="col-lg-7"><div class="eyebrow mb-3">Small-batch craft · Wholesale-ready</div><h1>Made to glow.<br><span class="text-terra">Built for your brand.</span></h1><p class="mt-4">Thoughtfully crafted soy candles for thoughtful spaces, thoughtful gifts, and growing businesses. Personalize your vessel, scent, lid, and label — then get transparent pricing as your order grows.</p><div class="d-flex gap-2 flex-wrap mt-4"><a href="#customizer" class="btn btn-terra btn-lg px-4" id="startCustomizing">Build your candle</a><a href="#pricing" class="btn btn-outline-terra btn-lg px-4">Explore wholesale rates</a></div><div class="d-flex gap-4 mt-4 small-muted"><span>✦ Soy-wax inspired</span><span>✦ Custom branding</span><span>✦ PH-based supply</span></div></div><div class="col-lg-5"><div class="surface p-3"><div class="product-art" style="min-height:340px"><div class="candle" style="transform:scale(1.55)"><div class="candle-label">LUNA WICK<br><small>slow mornings</small></div></div></div><div class="d-flex justify-content-between align-items-center px-2 pt-3"><div><div class="serif fs-5">Signature Soy Candle</div><div class="small-muted">Your scent. Your story.</div></div><span class="pill">Customizable</span></div></div></div></div></div></header>
+ <div class="container py-5">
+  <div class="row g-4 mb-5"><div class="col-md-4"><div class="surface h-100"><div class="eyebrow">01 / Thoughtful materials</div><h3 class="h4 mt-3">A considered candle</h3><p class="small-muted mb-0">Choose your vessel and finish for a cohesive look across your product line.</p></div></div><div class="col-md-4"><div class="surface h-100"><div class="eyebrow">02 / Flexible volumes</div><h3 class="h4 mt-3">Retail to wholesale</h3><p class="small-muted mb-0">Pricing adjusts with quantity, from individual retail orders to larger production runs.</p></div></div><div class="col-md-4"><div class="surface h-100"><div class="eyebrow">03 / Your identity</div><h3 class="h4 mt-3">Made for your brand</h3><p class="small-muted mb-0">Add your artwork or keep the clean, unlabeled look. Freight is estimated separately.</p></div></div></div>
+  <section id="pricing" class="mb-5"><div class="d-flex justify-content-between align-items-end flex-wrap gap-3 mb-3"><div><div class="eyebrow">Transparent volume rates</div><h2 class="h2 mt-2">A better price by the batch</h2></div><div class="small-muted">Retail: ₱350 per candle for 1–49 pieces</div></div>
+   <div class="row g-3 row-cols-2 row-cols-lg-4"><div class="col"><div class="price-tier" id="tierBadge1"><div class="small-muted">50–99 pcs</div><div class="fs-3 serif">₱250</div><small>/ piece</small></div></div><div class="col"><div class="price-tier" id="tierBadge2"><div class="small-muted">100–299 pcs</div><div class="fs-3 serif">₱200</div><span class="badge badge-sage">Save 20%</span></div></div><div class="col"><div class="price-tier" id="tierBadge3"><div class="small-muted">300–499 pcs</div><div class="fs-3 serif">₱180</div><span class="badge badge-sage">Save 28%</span></div></div><div class="col"><div class="price-tier" id="tierBadge4"><div class="small-muted">500+ pcs</div><div class="fs-3 serif">₱150</div><span class="badge badge-sage">Best value · Save 40%</span></div></div></div>
+  </section>
+  <div class="row g-4 align-items-start" id="customizer"><div class="col-lg-8">
+   <section class="surface mb-4"><div class="d-flex justify-content-between align-items-start gap-3 mb-4"><div><div class="eyebrow">Candle configurator</div><h2 class="h3 mt-2 mb-1">Build your signature candle</h2><p class="small-muted mb-0">Configure the details, review your estimate, and submit a production request.</p></div><span class="pill" id="stepCount">Step 1 of 4</span></div>
+    <div class="progress mb-4" style="height:5px;background:#eee8df"><div class="progress-bar" id="wizardProgress" style="width:25%;background:var(--sage)"></div></div>
+    <div class="step-panel active" id="step1"><h3 class="h5 mb-3">01 · Choose a vessel</h3><div class="row g-3"><div class="col-md-4"><div class="option-card selected" data-vessel="amber"><div class="fs-3 mb-2">🫙</div><strong>100ml Amber Glass</strong><div class="small-muted mt-1">Classic warm glow</div><span class="badge text-bg-light mt-3">Included</span></div></div><div class="col-md-4"><div class="option-card" data-vessel="ceramic"><div class="fs-3 mb-2">🏺</div><strong>200ml Matte Ceramic</strong><div class="small-muted mt-1">Premium texture</div><span class="badge text-bg-light mt-3">+₱30 / pc</span></div></div><div class="col-md-4"><div class="option-card" data-vessel="frosted"><div class="fs-3 mb-2">🧊</div><strong>250ml Frosted Glass</strong><div class="small-muted mt-1">Soft diffused light</div><span class="badge text-bg-light mt-3">+₱15 / pc</span></div></div></div><div class="d-flex justify-content-end mt-4"><button class="btn btn-terra" data-next="1">Choose scent →</button></div></div>
+    <div class="step-panel" id="step2"><h3 class="h5 mb-3">02 · Select a scent</h3><div class="row g-3"><div class="col-sm-6"><div class="option-card selected" data-scent="Lavender & Sage"><strong>🌿 Lavender & Sage</strong><div class="small-muted mt-1">Soft, herbal, calming</div></div></div><div class="col-sm-6"><div class="option-card" data-scent="Espresso Bourbon"><strong>☕ Espresso Bourbon</strong><div class="small-muted mt-1">Warm, roasted, rich</div></div></div><div class="col-sm-6"><div class="option-card" data-scent="Fresh Bamboo"><strong>🎋 Fresh Bamboo</strong><div class="small-muted mt-1">Green, clean, airy</div></div></div><div class="col-sm-6"><div class="option-card" data-scent="Vanilla Woods"><strong>🪵 Vanilla Woods</strong><div class="small-muted mt-1">Creamy, woody, smooth</div></div></div></div><div class="d-flex justify-content-between mt-4"><button class="btn btn-outline-secondary" data-next="-1">← Back</button><button class="btn btn-terra" data-next="1">Choose lid →</button></div></div>
+    <div class="step-panel" id="step3"><h3 class="h5 mb-3">03 · Choose a lid</h3><div class="row g-3"><div class="col-md-4"><div class="option-card selected" data-lid="bamboo"><strong>🎋 Raw Bamboo</strong><div class="small-muted mt-2">+₱10 / pc</div></div></div><div class="col-md-4"><div class="option-card" data-lid="black"><strong>⚫ Matte Black Metal</strong><div class="small-muted mt-2">+₱5 / pc</div></div></div><div class="col-md-4"><div class="option-card" data-lid="none"><strong>⭕ No Lid</strong><div class="small-muted mt-2">Included</div></div></div></div><div class="d-flex justify-content-between mt-4"><button class="btn btn-outline-secondary" data-next="-1">← Back</button><button class="btn btn-terra" data-next="1">Brand your candle →</button></div></div>
+    <div class="step-panel" id="step4"><h3 class="h5 mb-3">04 · Artwork & label</h3><div class="row g-3"><div class="col-md-6"><div class="option-card selected" data-label="artwork"><strong>🎨 Upload my artwork</strong><div class="small-muted mt-1">Attach a design file to your request.</div></div></div><div class="col-md-6"><div class="option-card" data-label="plain"><strong>📄 Plain / unlabeled</strong><div class="small-muted mt-1">Minimal vessel, ready for your own labels.</div></div></div></div><div class="mt-3" id="artworkField"><label class="field-label" for="artworkFile">Artwork file (optional)</label><input type="file" id="artworkFile" class="form-control" accept=".png,.jpg,.jpeg,.pdf,.svg"><div class="small-muted mt-1">The file is not uploaded to Firebase Storage by this demo; provide it separately after the request.</div></div><div class="d-flex justify-content-between mt-4"><button class="btn btn-outline-secondary" data-next="-1">← Back</button><button class="btn btn-terra" id="saveQuoteBtn">Save quote locally</button></div></div>
+   </section>
+   <section class="surface"><div class="eyebrow">Production request</div><h2 class="h3 mt-2">Ready to make it yours?</h2><p class="small-muted">Sign in is required to place an order so your account can track it securely.</p><form id="orderForm" novalidate><div class="row g-3"><div class="col-md-6"><label class="field-label" for="orderCompany">Company name *</label><input class="form-control" id="orderCompany" required maxlength="150"></div><div class="col-md-6"><label class="field-label" for="orderTin">Company TIN *</label><input class="form-control" id="orderTin" required maxlength="40" placeholder="Tax identification number"></div><div class="col-12"><label class="field-label" for="orderAddress">Shipping address *</label><textarea class="form-control" id="orderAddress" rows="2" required maxlength="700"></textarea></div><div class="col-md-6"><label class="field-label" for="orderContact">Contact person *</label><input class="form-control" id="orderContact" required maxlength="120"></div><div class="col-md-6"><label class="field-label" for="orderEmail">Contact email *</label><input class="form-control" id="orderEmail" type="email" required maxlength="254"></div><div class="col-12"><label class="field-label d-block">Payment model</label><div class="row g-2"><div class="col-md-6"><label class="option-card d-block"><input type="radio" name="paymentModel" value="50_deposit" checked> <strong>50% production deposit</strong><div class="small-muted mt-1" id="depositText">₱0.00 deposit estimate</div></label></div><div class="col-md-6"><label class="option-card d-block"><input type="radio" name="paymentModel" value="100_upfront"> <strong>100% upfront</strong><div class="small-muted mt-1" id="upfrontText">₱0.00 total due</div></label></div></div></div><div class="col-12"><label class="field-label d-block">Preferred payment method</label><div class="d-flex flex-wrap gap-3"><label><input type="radio" name="payMethod" value="Bank Transfer" checked> Bank transfer</label><label><input type="radio" name="payMethod" value="E-Wallet"> GCash / Maya</label><label><input type="radio" name="payMethod" value="Corporate PO"> Corporate PO</label></div></div><div class="col-12"><div class="notice small-muted">Submitting creates an order request with payment status <strong>pending_verification</strong>. This page does not collect card credentials or confirm payment.</div></div><div class="col-12"><button class="btn btn-terra btn-lg w-100" id="submitOrderBtn" type="submit">Sign in to submit order</button></div></div></form></section>
+  </div><aside class="col-lg-4"><div class="surface sticky-lg-top" style="top:100px"><div class="eyebrow">Your configuration</div><h3 class="h4 mt-2">Order summary</h3><div class="summary-line"><span>Quantity</span><strong id="summaryQty">100 pcs</strong></div><div class="summary-line"><span>Base rate</span><strong id="summaryBase">₱200.00</strong></div><div class="summary-line"><span>Vessel</span><strong id="summaryVessel" class="text-end">100ml Amber Glass</strong></div><div class="summary-line"><span>Scent</span><strong id="summaryScent" class="text-end">Lavender & Sage</strong></div><div class="summary-line"><span>Lid</span><strong id="summaryLid" class="text-end">Raw Bamboo</strong></div><div class="summary-line"><span>Label</span><strong id="summaryLabel" class="text-end">Custom artwork</strong></div><hr><label class="field-label" for="quantityInput">Quantity (pieces)</label><input type="number" class="form-control" id="quantityInput" min="1" max="10000" step="1" value="100"><div class="small-muted mt-2" id="tierHint">Add 200 pieces to unlock the next tier.</div><div class="summary-line mt-3"><span>Adjusted unit price</span><strong id="summaryUnit">₱210.00</strong></div><div class="summary-line"><span>Estimated weight</span><strong id="summaryWeight">40.0 kg</strong></div><hr><div class="d-flex justify-content-between align-items-end"><span class="fw-semibold">Estimated total</span><strong class="summary-total text-sage" id="summaryTotal">₱21,000.00</strong></div><div class="small-muted mt-2">Freight estimate is separate and subject to final quote.</div><hr><div class="eyebrow">PH freight diagnostics</div><div class="small-muted mt-2" id="freightText">Calculating estimate…</div></div></aside></div>
+ </div>
+</section>
 
-    <div class="container my-5">
-        <div class="row g-5">
-            <!-- Left Configurator Column -->
-            <div class="col-lg-8">
-                
-                <!-- Section A: Volume Pricing Matrix -->
-                <section class="mb-5 p-4 bg-white border rounded">
-                    <h2 class="h4 mb-3">1. Volume Pricing Matrix</h2>
-                    <p class="text-muted small">Bulk-exclusive rates for B2B partners. Minimum order is 50 units.</p>
-                    
-                    <div class="mb-4">
-                        <label for="quantitySlider" class="form-label d-flex justify-content-between">
-                            <span>Order Quantity (units):</span>
-                            <strong class="fs-5 text-dark" id="quantityDisplay">100 pcs</strong>
-                        </label>
-                        <input type="range" class="form-range" id="quantitySlider" min="50" max="1000" step="10" value="100">
-                    </div>
+<section id="view-auth" class="view py-5"><div class="container"><div class="auth-shell"><div class="row g-0 surface overflow-hidden"><div class="col-lg-5 p-3 p-md-4"><div class="auth-panel"><div class="eyebrow">Welcome to Luna Wick</div><h2 class="mt-3">Good things take a little glow.</h2><p class="small-muted mt-3">Sign in to manage your company profile, submit custom candle requests, and follow production updates in one place.</p><div class="product-art mt-4"><div class="candle"><div class="candle-label">LUNA WICK</div></div></div></div></div><div class="col-lg-7 p-4 p-md-5"><div class="d-flex gap-2 mb-4"><button class="btn btn-terra" id="showLogin">Sign in</button><button class="btn btn-outline-terra" id="showRegister">Create account</button></div><div id="loginPanel"><h2 class="h3">Welcome back</h2><p class="small-muted">Sign in with your account credentials.</p><form id="loginForm" class="mt-4"><div class="mb-3"><label class="field-label" for="loginEmail">Email address</label><input id="loginEmail" type="email" class="form-control" required autocomplete="email"></div><div class="mb-3"><label class="field-label" for="loginPassword">Password</label><input id="loginPassword" type="password" class="form-control" required autocomplete="current-password" minlength="6"></div><button class="btn btn-terra w-100 mt-2" type="submit" id="loginBtn">Sign in</button></form></div><div id="registerPanel" class="hidden"><h2 class="h3">Create your account</h2><p class="small-muted">Register as a Luna Wick customer or business partner.</p><form id="registerForm" class="mt-4"><div class="mb-3"><label class="field-label" for="regName">Full name *</label><input id="regName" class="form-control" required maxlength="120" autocomplete="name"></div><div class="mb-3"><label class="field-label" for="regCompany">Company name</label><input id="regCompany" class="form-control" maxlength="150" autocomplete="organization"></div><div class="mb-3"><label class="field-label" for="regTin">Company TIN</label><input id="regTin" class="form-control" maxlength="40"></div><div class="mb-3"><label class="field-label" for="regAddress">Shipping address</label><textarea id="regAddress" class="form-control" rows="2" maxlength="700"></textarea></div><div class="mb-3"><label class="field-label" for="regEmail">Email address *</label><input id="regEmail" type="email" class="form-control" required maxlength="254" autocomplete="email"></div><div class="mb-3"><label class="field-label" for="regPassword">Password *</label><input id="regPassword" type="password" class="form-control" required minlength="8" autocomplete="new-password"><div class="small-muted mt-1">Use at least 8 characters.</div></div><button class="btn btn-terra w-100 mt-2" type="submit" id="registerBtn">Create customer account</button></form></div><div class="small-muted mt-4">By continuing, you agree to use this portal for legitimate order and account activity.</div></div></div></div></div></section>
 
-                    <div class="mb-4">
-                        <div class="progress" style="height: 10px;">
-                            <div id="tierProgressBar" class="progress-bar progress-bar-fill" role="progressbar" style="width: 20%"></div>
-                        </div>
-                        <small id="tierProgressText" class="text-muted d-block mt-2">Loading next tier info...</small>
-                    </div>
+<section id="view-profile" class="view py-5"><div class="container"><div class="eyebrow">Account</div><h1 class="h2 mt-2 mb-4">My profile</h1><div class="row g-4"><div class="col-lg-7"><div class="surface"><h2 class="h4 mb-3">Business details</h2><form id="profileForm"><div class="mb-3"><label class="field-label" for="profileName">Full name</label><input class="form-control" id="profileName" required maxlength="120"></div><div class="mb-3"><label class="field-label" for="profileCompany">Company name</label><input class="form-control" id="profileCompany" maxlength="150"></div><div class="mb-3"><label class="field-label" for="profileTin">Company TIN</label><input class="form-control" id="profileTin" maxlength="40"></div><div class="mb-3"><label class="field-label" for="profileAddress">Shipping address</label><textarea class="form-control" id="profileAddress" rows="3" maxlength="700"></textarea></div><div class="small-muted mb-3" id="profileEmail"></div><button class="btn btn-terra" type="submit" id="saveProfileBtn">Save profile</button></form></div></div><div class="col-lg-5"><div class="surface"><div class="eyebrow">Account status</div><h3 class="h4 mt-2">Your Luna Wick account</h3><p class="small-muted">Use the order tracker to follow your request from receipt through fulfillment.</p><button class="btn btn-outline-terra" data-view="orders">Track my orders →</button></div></div></div></div></section>
 
-                    <div class="row g-2 text-center row-cols-2 row-cols-sm-4">
-                        <div class="col">
-                            <div class="p-2 border rounded bg-light" id="tierBadge1">
-                                <div class="small fw-bold">50–99 pcs</div>
-                                <div class="fs-5">₱250</div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="p-2 border rounded bg-light" id="tierBadge2">
-                                <div class="small fw-bold">100–299 pcs</div>
-                                <div class="fs-5">₱200</div>
-                                <span class="badge bg-success small">Save 20%</span>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="p-2 border rounded bg-light" id="tierBadge3">
-                                <div class="small fw-bold">300–499 pcs</div>
-                                <div class="fs-5">₱180</div>
-                                <span class="badge bg-success small">Save 28%</span>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="p-2 border rounded bg-light" id="tierBadge4">
-                                <div class="small fw-bold">500+ pcs</div>
-                                <div class="fs-5">₱150</div>
-                                <span class="badge bg-danger small">Save 40%</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+<section id="view-orders" class="view py-5"><div class="container"><div class="eyebrow">Production tracker</div><h1 class="h2 mt-2">Track your orders</h1><p class="small-muted mb-4">Order updates appear here when your production team changes the status.</p><div id="clientOrders"><div class="surface text-center py-5">Sign in to view your orders.</div></div></div></section>
 
-                <!-- Section B: Custom Candle Builder Wizard -->
-                <section class="mb-5 p-4 bg-white border rounded">
-                    <h2 class="h4 mb-3">2. Custom Luna Wick Builder</h2>
-                    <p class="text-muted small">Configure your exclusive bulk order. Prices shown are per-unit add-ons.</p>
-                    
-                    <!-- Wizard Step 1: Vessel -->
-                    <div class="wizard-step active" id="step1">
-                        <h5 class="mb-3">Choose Vessel Base</h5>
-                        <div class="row g-3">
-                            <div class="col-sm-4">
-                                <div class="card p-3 card-custom text-center selected" onclick="selectVessel('100ml Amber Glass', 0, this)">
-                                    <div class="fs-2 mb-2">🫙</div>
-                                    <h6>100ml Amber Glass</h6>
-                                    <small class="text-muted d-block">Classic warm glow</small>
-                                    <span class="badge bg-light text-dark mt-2">Base Included</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card p-3 card-custom text-center" onclick="selectVessel('200ml Matte Ceramic', 30, this)">
-                                    <div class="fs-2 mb-2">🏺</div>
-                                    <h6>200ml Matte Ceramic</h6>
-                                    <small class="text-muted d-block">Premium texture</small>
-                                    <span class="badge bg-secondary text-white mt-2">+₱30 / pc</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card p-3 card-custom text-center" onclick="selectVessel('250ml Frosted Glass', 15, this)">
-                                    <div class="fs-2 mb-2">🧊</div>
-                                    <h6>250ml Frosted Glass</h6>
-                                    <small class="text-muted d-block">Soft diffused light</small>
-                                    <span class="badge bg-secondary text-white mt-2">+₱15 / pc</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4 text-end">
-                            <button class="btn btn-terracotta px-4" onclick="changeStep(1)">Next Step</button>
-                        </div>
-                    </div>
+<section id="view-admin" class="view py-5"><div class="container"><div class="eyebrow">Restricted workspace</div><h1 class="h2 mt-2">Admin control panel</h1><div id="adminAccessMessage" class="surface mb-4">Verifying permissions…</div><div id="adminContent" class="hidden"><div class="row g-3 mb-4"><div class="col-md-4"><div class="surface"><div class="small-muted">Total orders</div><div class="summary-total" id="adminOrderCount">0</div></div></div><div class="col-md-4"><div class="surface"><div class="small-muted">Pending verification</div><div class="summary-total" id="adminPendingCount">0</div></div></div><div class="col-md-4"><div class="surface"><div class="small-muted">Registered profiles</div><div class="summary-total" id="adminUserCount">0</div></div></div></div><div class="surface mb-4"><div class="d-flex justify-content-between align-items-center flex-wrap gap-2"><h2 class="h4 mb-0">Order fulfillment manager</h2><button class="btn btn-outline-terra btn-sm" id="refreshAdminBtn">Refresh data</button></div><div class="table-responsive mt-3"><table class="table align-middle"><thead><tr><th>Order / Date</th><th>Customer / TIN</th><th>Items</th><th>Total</th><th>Payment</th><th>Order status</th></tr></thead><tbody id="adminOrdersBody"><tr><td colspan="6">Loading orders…</td></tr></tbody></table></div></div><div class="surface"><h2 class="h4">Customer directory</h2><div class="table-responsive mt-3"><table class="table align-middle"><thead><tr><th>Name</th><th>Company</th><th>TIN</th><th>Email</th><th>Role</th></tr></thead><tbody id="adminUsersBody"><tr><td colspan="5">Loading customers…</td></tr></tbody></table></div></div></div></div></section>
+</main>
+<footer class="py-4 mt-5"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2 small-muted"><span>© <span id="year"></span> Luna Wick Co. · Candle Studio & Wholesale</span><span>Crafted with care in the Philippines · <a href="mailto:sales@lunawick.ph">Contact sales</a></span></div></footer>
+<div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
 
-                    <!-- Wizard Step 2: Scent -->
-                    <div class="wizard-step" id="step2">
-                        <h5 class="mb-3">Select Scent Profile</h5>
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="card p-3 card-custom text-center selected" onclick="selectScent('Lavender & Sage', this)">
-                                    <h6>🌿 Lavender & Sage</h6>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card p-3 card-custom text-center" onclick="selectScent('Espresso Bourbon', this)">
-                                    <h6>☕ Espresso Bourbon</h6>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card p-3 card-custom text-center" onclick="selectScent('Fresh Bamboo', this)">
-                                    <h6>🎋 Fresh Bamboo</h6>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card p-3 card-custom text-center" onclick="selectScent('Vanilla Woods', this)">
-                                    <h6>🪵 Vanilla Woods</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4 d-flex justify-content-between">
-                            <button class="btn btn-outline-secondary" onclick="changeStep(-1)">Previous</button>
-                            <button class="btn btn-terracotta px-4" onclick="changeStep(1)">Next Step</button>
-                        </div>
-                    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, doc, getDoc, setDoc, updateDoc, addDoc, collection, query, where, getDocs, onSnapshot, serverTimestamp, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-                    <!-- Wizard Step 3: Lid -->
-                    <div class="wizard-step" id="step3">
-                        <h5 class="mb-3">Choose Lid Customization</h5>
-                        <div class="row g-3">
-                            <div class="col-sm-4">
-                                <div class="card p-3 card-custom text-center selected" onclick="selectLid('Raw Bamboo', 10, this)">
-                                    <h6>🎋 Raw Bamboo</h6>
-                                    <span class="badge bg-secondary mt-2">+₱10 / pc</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card p-3 card-custom text-center" onclick="selectLid('Matte Black Metal', 5, this)">
-                                    <h6>⚫ Matte Black Metal</h6>
-                                    <span class="badge bg-secondary mt-2">+₱5 / pc</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="card p-3 card-custom text-center" onclick="selectLid('No Lid', 0, this)">
-                                    <h6>⭕ No Lid</h6>
-                                    <span class="badge bg-light text-dark mt-2">Included</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4 d-flex justify-content-between">
-                            <button class="btn btn-outline-secondary" onclick="changeStep(-1)">Previous</button>
-                            <button class="btn btn-terracotta px-4" onclick="changeStep(1)">Next Step</button>
-                        </div>
-                    </div>
-
-                    <!-- Wizard Step 4: Labeling -->
-                    <div class="wizard-step" id="step4">
-                        <h5 class="mb-3">Branding & Labeling Options</h5>
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="card p-3 card-custom text-center selected" onclick="selectLabel('Upload My Own Artwork', this)">
-                                    <div class="fs-3 mb-2">🎨</div>
-                                    <h6>Upload My Own Artwork</h6>
-                                    <small class="text-muted">We print your custom artwork directly</small>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="card p-3 card-custom text-center" onclick="selectLabel('Plain / Unlabeled', this)">
-                                    <div class="fs-3 mb-2">📄</div>
-                                    <h6>Plain / Unlabeled</h6>
-                                    <small class="text-muted">Clean vessel, ready for your labels</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4 d-flex justify-content-between">
-                            <button class="btn btn-outline-secondary" onclick="changeStep(-1)">Previous</button>
-                            <button id="btnSaveQuote" class="btn btn-success px-4">Save Draft Quote</button>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- Section C: Phased Deposit Checkout Form -->
-                <section class="mb-5 p-4 bg-white border rounded">
-                    <h2 class="h4 mb-3">3. Secure Phased Order Checkout</h2>
-                    <p class="text-muted small">Lock in your manufacturing slots. Complete official billing registration details below.</p>
-                    
-                    <form id="orderForm" onsubmit="handleOrderSubmit(event)">
-                        <div class="mb-4">
-                            <label class="form-label d-block fw-bold">Select Corporate Payment Terms:</label>
-                            <div class="form-check form-check-inline border p-3 rounded me-3 w-100 mb-2 style-terms">
-                                <input class="form-check-input ms-1" type="radio" name="paymentSplit" id="split50" value="50" checked onchange="updateCalculations()">
-                                <label class="form-check-label ms-2" for="split50">
-                                    <strong>Pay 50% Production Downpayment</strong>
-                                    <div class="text-muted small" id="downpaymentLabel">₱0.00</div>
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline border p-3 rounded w-100 style-terms">
-                                <input class="form-check-input ms-1" type="radio" name="paymentSplit" id="split100" value="100" onchange="updateCalculations()">
-                                <label class="form-check-label ms-2" for="split100">
-                                    <strong>Pay 100% Full Structural Amount</strong>
-                                    <div class="text-muted small" id="fullPaymentLabel">₱0.00</div>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label small fw-bold">Company Name *</label>
-                                <input type="text" class="form-control" id="companyName" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label small fw-bold">Company TIN (Tax Identification Number) *</label>
-                                <input type="text" class="form-control" id="companyTin" placeholder="000-000-000-000" required>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label small fw-bold">Delivery Shipping Address *</label>
-                                <textarea class="form-control" id="deliveryAddress" rows="2" placeholder="Complete Street Name, City, Province" required></textarea>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label small fw-bold">Contact Person *</label>
-                                <input type="text" class="form-control" id="contactPerson" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label small fw-bold">Corporate Contact Email *</label>
-                                <input type="email" class="form-control" id="contactEmail" required>
-                            </div>
-                        </div>
-
-                        <div class="mt-4">
-                            <label class="form-label d-block fw-bold">Preferred Clearing Method:</label>
-                            <div class="btn-group w-100" role="group">
-                                <input type="radio" class="btn-check" name="payMethod" id="methodBank" value="Bank Transfer" checked>
-                                <label class="btn btn-outline-terracotta p-3" for="methodBank">🏦 Bank Transfer<br><small class="small text-muted">BDO / BPI</small></label>
-                                
-                                <input type="radio" class="btn-check" name="payMethod" id="methodEwallet" value="E-Wallet">
-                                <label class="btn btn-outline-terracotta p-3" for="methodEwallet">📱 GCash Pro / Maya<br><small class="small text-muted">Instant Business</small></label>
-                                
-                                <input type="radio" class="btn-check" name="payMethod" id="methodPO" value="Corporate PO">
-                                <label class="btn btn-outline-terracotta p-3" for="methodPO">📄 Corporate PO<br><small class="small text-muted">Purchase Order</small></label>
-                            </div>
-                        </div>
-
-                        <button type="submit" id="btnSubmitOrder" class="btn btn-terracotta w-100 btn-lg mt-4 font-serif">Submit Bulk Production Request</button>
-                    </form>
-                </section>
-            </div>
-
-            <!-- Sticky Right Summary Column -->
-            <div class="col-lg-4">
-                <div class="sticky-top" style="top: 24px; z-index: 10;">
-                    <div class="p-4 bg-white border rounded shadow-sm mb-4">
-                        <h3 class="h5 pb-3 border-bottom font-serif">Your Configuration</h3>
-                        
-                        <div class="d-flex justify-content-between my-2">
-                            <span class="text-muted">Quantity:</span>
-                            <span class="fw-bold" id="summaryQty">100 pcs</span>
-                        </div>
-                        <div class="d-flex justify-content-between my-2">
-                            <span class="text-muted">Base Unit Rate:</span>
-                            <span id="summaryBasePrice">₱200</span>
-                        </div>
-                        <div class="d-flex justify-content-between my-2">
-                            <span class="text-muted">Selected Vessel:</span>
-                            <span class="text-end" id="summaryVessel">100ml Amber Glass</span>
-                        </div>
-                        <div class="d-flex justify-content-between my-2">
-                            <span class="text-muted">Selected Scent:</span>
-                            <span id="summaryScent">Lavender & Sage</span>
-                        </div>
-                        <div class="d-flex justify-content-between my-2">
-                            <span class="text-muted">Selected Lid:</span>
-                            <span id="summaryLid">Raw Bamboo</span>
-                        </div>
-                        <div class="d-flex justify-content-between my-2">
-                            <span class="text-muted">Label Style:</span>
-                            <span id="summaryLabel">Upload My Own Artwork</span>
-                        </div>
-
-                        <hr>
-
-                        <div class="d-flex justify-content-between my-2">
-                            <span class="text-muted fw-bold">Adjusted Unit Price:</span>
-                            <span class="fw-bold text-dark fs-5" id="summaryFinalUnit">₱210</span>
-                        </div>
-
-                        <div class="d-flex justify-content-between my-2">
-                            <span class="text-muted fw-bold">Aggregate Weight:</span>
-                            <span class="fw-bold text-dark" id="summaryWeight">40.0 kg</span>
-                        </div>
-
-                        <hr>
-
-                        <div class="d-flex justify-content-between my-2">
-                            <span class="h5 font-serif m-0">Estimated Total:</span>
-                            <span class="h4 text-success font-serif m-0" id="summaryGrandTotal">₱21,000</span>
-                        </div>
-                    </div>
-
-                    <!-- Freight Logistics Block -->
-                    <div class="p-4 bg-white border rounded shadow-sm">
-                        <h4 class="h6 font-serif border-bottom pb-2">📦 Smart PH Freight Estimator</h4>
-                        <div id="freightEstimatorView" class="small text-muted py-2">
-                            Evaluating weights to configure localized cargo couriers...
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="bg-white border-top py-4 text-center mt-5">
-        <div class="container text-muted small">
-            © 2026 Luna Wick Co. · Exclusive B2B Candle Manufacturing · Philippines<br>
-            For verification & inquiries: <a href="mailto:sales@lunawick.ph" class="text-decoration-none">sales@lunawick.ph</a>
-        </div>
-    </footer>
-
-    <!-- Firebase Connection and Application Engine Integration Module -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-        // Verified Firebase API Connection Keys
-        const firebaseConfig = {
-            apiKey: "AIzaSyBKD9Yt_JW4pS4lU_R-Alpk2HtDpMZ5kAI",
-            authDomain: "lunawick-c9469.firebaseapp.com",
-            projectId: "lunawick-c9469",
-            storageBucket: "lunawick-c9469.firebasestorage.app",
-            messagingSenderId: "621812490472",
-            appId: "1:621812490472:web:b9447fd99d69d1851ea95d",
-            measurementId: "G-5W3MQD2PWT"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-
-        // UI App Core States
-        let currentQuantity = 100;
-        let baseUnitPrice = 200;
-        let vesselChoice = "100ml Amber Glass";
-        let vesselCost = 0;
-        let scentChoice = "Lavender & Sage";
-        let lidChoice = "Raw Bamboo";
-        let lidCost = 10;
-        let labelChoice = "Upload My Own Artwork";
-        let currentStepIndex = 1;
-
-        // Reactive Dom Nodes Mapping
-        const quantitySlider = document.getElementById('quantitySlider');
-        const quantityDisplay = document.getElementById('quantityDisplay');
-        const tierProgressBar = document.getElementById('tierProgressBar');
-        const tierProgressText = document.getElementById('tierProgressText');
-
-        // Dynamic State Engine Calculators
-        function computePriceMatrix() {
-            currentQuantity = parseInt(quantitySlider.value);
-            quantityDisplay.innerText = `${currentQuantity} pcs`;
-
-            // Evaluate standard wholesale pricing brackets
-            if (currentQuantity < 100) {
-                baseUnitPrice = 250;
-                tierProgressBar.style.width = "25%";
-                tierProgressText.innerText = `Add ${100 - currentQuantity} more items to unlock the ₱200/pc tier (Save 20%)!`;
-                toggleActiveBadge(1);
-            } else if (currentQuantity < 300) {
-                baseUnitPrice = 200;
-                tierProgressBar.style.width = "50%";
-                tierProgressText.innerText = `Add ${300 - currentQuantity} more items to unlock the ₱180/pc tier (Save 28%)!`;
-                toggleActiveBadge(2);
-            } else if (currentQuantity < 500) {
-                baseUnitPrice = 180;
-                tierProgressBar.style.width = "75%";
-                tierProgressText.innerText = `Add ${500 - currentQuantity} more items to unlock the ₱150/pc tier (Save 40%)!`;
-                toggleActiveBadge(3);
-            } else {
-                baseUnitPrice = 150;
-                tierProgressBar.style.width = "100%";
-                tierProgressText.innerText = "Highest dynamic tier discount successfully unlocked!";
-                toggleActiveBadge(4);
-            }
-
-            updateCalculations();
-        }
-
-        function toggleActiveBadge(index) {
-            for(let i=1; i<=4; i++) {
-                document.getElementById(`tierBadge${i}`).classList.toggle('border-success', i === index);
-                document.getElementById(`tierBadge${i}`).classList.toggle('bg-white', i === index);
-            }
-        }
-
-        function updateCalculations() {
-            const calculatedPerUnit = baseUnitPrice + vesselCost + lidCost;
-            const absoluteTotal = calculatedPerUnit * currentQuantity;
-            const compoundWeight = (currentQuantity * 0.4).toFixed(1);
-
-            // Populate Sticky Sidebar Panel Nodes
-            document.getElementById('summaryQty').innerText = `${currentQuantity} pcs`;
-            document.getElementById('summaryBasePrice').innerText = `₱${baseUnitPrice}`;
-            document.getElementById('summaryVessel').innerText = vesselChoice;
-            document.getElementById('summaryScent').innerText = scentChoice;
-            document.getElementById('summaryLid').innerText = lidChoice;
-            document.getElementById('summaryLabel').innerText = labelChoice;
-            document.getElementById('summaryFinalUnit').innerText = `₱${calculatedPerUnit}`;
-            document.getElementById('summaryWeight').innerText = `${compoundWeight} kg`;
-            document.getElementById('summaryGrandTotal').innerText = `₱${absoluteTotal.toLocaleString()}`;
-
-            // Sync Split Payment Values
-            document.getElementById('downpaymentLabel').innerText = `₱${(absoluteTotal * 0.5).toLocaleString()}`;
-            document.getElementById('fullPaymentLabel').innerText = `₱${absoluteTotal.toLocaleString()}`;
-
-            // Smart Freight Route Estimator Logic
-            const freightView = document.getElementById('freightEstimatorView');
-            if (compoundWeight < 20) {
-                freightView.innerHTML = `<strong>🛵 On-Demand Van Service:</strong><br>Weight falls under 20kg. Eligible for Lalamove / Grab Car Extra transport mapping. Estimated fee: ₱300 - ₱600 inside Metro Manila / Laguna hubs.`;
-            } else {
-                freightView.innerHTML = `<strong>🚛 Heavy Heavy-Cargo Freight:</strong><br>Aggregate weight is ${compoundWeight} kg. Standard couriers restricted. Routes mapped through AP Cargo / Capex Sea Freight. Base rate starts at ₱1,500+ (Requires structural validation quote).`;
-            }
-        }
-
-        // Handle Wizard UI Selection Updates
-        window.selectVessel = function(name, cost, element) {
-            vesselChoice = name;
-            vesselCost = cost;
-            clearAndSelect(element);
-            updateCalculations();
-        }
-
-        window.selectScent = function(name, element) {
-            scentChoice = name;
-            clearAndSelect(element);
-            updateCalculations();
-        }
-
-        window.selectLid = function(name, cost, element) {
-            lidChoice = name;
-            lidCost = cost;
-            clearAndSelect(element);
-            updateCalculations();
-        }
-
-        window.selectLabel = function(name, element) {
-            labelChoice = name;
-            clearAndSelect(element);
-            updateCalculations();
-        }
-
-        function clearAndSelect(selectedElement) {
-            const siblings = selectedElement.parentElement.parentElement.getElementsByClassName('card-custom');
-            for(let card of siblings) {
-                card.classList.remove('selected');
-            }
-            selectedElement.classList.add('selected');
-        }
-
-        // Wizard Progression Controllers
-        window.changeStep = function(direction) {
-            document.getElementById(`step${currentStepIndex}`).classList.remove('active');
-            currentStepIndex += direction;
-            document.getElementById(`step${currentStepIndex}`).classList.add('active');
-        }
-
-        // Database Write Hooks: Save Draft Quotes
-        document.getElementById('btnSaveQuote').addEventListener('click', async () => {
-            const btn = document.getElementById('btnSaveQuote');
-            btn.disabled = true;
-            btn.innerText = "Saving Draft...";
-
-            try {
-                const docRef = await addDoc(collection(db, "luna_wick_draft_quotes"), {
-                    quantity: currentQuantity,
-                    basePrice: baseUnitPrice,
-                    vessel: vesselChoice,
-                    scent: scentChoice,
-                    lid: lidChoice,
-                    label: labelChoice,
-                    calculatedUnitPrice: baseUnitPrice + vesselCost + lidCost,
-                    estimatedTotal: (baseUnitPrice + vesselCost + lidCost) * currentQuantity,
-                    timestamp: new Date()
-                });
-                alert(`Corporate Draft Quote recorded in Firebase Console securely! Draft ID: ${docRef.id}`);
-            } catch (err) {
-                console.error("Firestore Exception Catch: ", err);
-                alert("Database transmission failed. Double check permissions configuration.");
-            } finally {
-                btn.disabled = false;
-                btn.innerText = "Save Draft Quote";
-            }
-        });
-
-        // Database Write Hooks: Execute Orders
-        window.handleOrderSubmit = async function(event) {
-            event.preventDefault();
-            const btn = document.getElementById('btnSubmitOrder');
-            btn.disabled = true;
-            btn.innerText = "Transmitting Request Payload...";
-
-            const selectedSplit = document.querySelector('input[name="paymentSplit"]:checked').value;
-            const corporateMethod = document.querySelector('input[name="payMethod"]:checked').value;
-
-            try {
-                const orderPayload = {
-                    companyName: document.getElementById('companyName').value,
-                    companyTin: document.getElementById('companyTin').value,
-                    deliveryAddress: document.getElementById('deliveryAddress').value,
-                    contactPerson: document.getElementById('contactPerson').value,
-                    contactEmail: document.getElementById('contactEmail').value,
-                    paymentStructure: selectedSplit === "50" ? "50% Downpayment split" : "100% Full upfront clearing",
-                    paymentClearingMethod: corporateMethod,
-                    configuration: {
-                        qty: currentQuantity,
-                        vessel: vesselChoice,
-                        scent: scentChoice,
-                        lid: lidChoice,
-                        label: labelChoice
-                    },
-                    orderTotalAmount: (baseUnitPrice + vesselCost + lidCost) * currentQuantity,
-                    initialOrderStatus: "pending_downpayment",
-                    createdAt: new Date()
-                };
-
-                const orderRef = await addDoc(collection(db, "luna_wick_bulk_orders"), { ...orderPayload });
-                alert(`Success! Luna Wick Bulk Request logged.
-Order Reference ID: ${orderRef.id}
-
-Please review manual processing guidelines sent to your inbox.`);
-                document.getElementById('orderForm').reset();
-            } catch (error) {
-                console.error("Order Transaction Error: ", error);
-                alert("Order routing error. Ensure Firebase Firestore collections rules match production protocols.");
-            } finally {
-                btn.disabled = false;
-                btn.innerText = "Submit Bulk Production Request";
-            }
-        }
-
-        // Initialize Base Runtime Observers
-        quantitySlider.addEventListener('input', computePriceMatrix);
-        computePriceMatrix();
-    </script>
+const firebaseConfig = {
+  apiKey: "AIzaSyBKD9Yt_JW4pS4lU_R-Alpk2HtDpMZ5kAI",
+  authDomain: "lunawick-c9469.firebaseapp.com",
+  projectId: "lunawick-c9469",
+  storageBucket: "lunawick-c9469.firebasestorage.app",
+  messagingSenderId: "621812490472",
+  appId: "1:621812490472:web:b9447fd99d69d1851ea95d",
+  measurementId: "G-5W3MQD2PWT"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const $ = (id) => document.getElementById(id);
+const currentState = { currentView: "marketplace", user: null, profile: null, admin: false, orderUnsubscribe: null, adminUnsubscribers: [] };
+const fmt = n => new Intl.NumberFormat("en-PH",{style:"currency",currency:"PHP",maximumFractionDigits:2}).format(Number(n)||0);
+const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+const pricing = [{min:1,max:49,price:350},{min:50,max:99,price:250},{min:100,max:299,price:200},{min:300,max:499,price:180},{min:500,max:10000,price:150}];
+const vesselOptions = {amber:{name:"100ml Amber Glass",cost:0},ceramic:{name:"200ml Matte Ceramic",cost:30},frosted:{name:"250ml Frosted Glass",cost:15}};
+const lidOptions = {bamboo:{name:"Raw Bamboo",cost:10},black:{name:"Matte Black Metal",cost:5},none:{name:"No Lid",cost:0}};
+const config = {quantity:100,vessel:"amber",scent:"Lavender & Sage",lid:"bamboo",label:"artwork",step:1};
+const orderStatuses = ["received","in_production","out_for_delivery","fulfilled"];
+const statusLabels = {received:"Received",in_production:"In Production",out_for_delivery:"Out for Delivery",fulfilled:"Fulfilled"};
+let profileCache = null;
+function toast(message,type="info"){
+ const node=document.createElement("div");node.className="toast align-items-center border-0";
+ node.innerHTML=`<div class="d-flex"><div class="toast-body">${escapeHTML(message)}</div><button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button></div>`;
+ node.style.background=type==="error"?"#f8d7da":type==="success"?"#e6eee6":"#fff";node.style.color="#1C1C1C";$("toastContainer").append(node);
+ const t=new bootstrap.Toast(node,{delay:5000});t.show();node.addEventListener("hidden.bs.toast",()=>node.remove());
+}
+function setBusy(button,busy,label){if(!button)return;button.disabled=busy;button.classList.toggle("loading",busy);if(busy){button.dataset.oldLabel=button.textContent;button.textContent=label||"Please wait…"}else{button.textContent=button.dataset.oldLabel||label||"Submit";delete button.dataset.oldLabel}}
+function showView(view){
+ const allowed=["marketplace","auth","profile","orders","admin"];if(!allowed.includes(view))view="marketplace";
+ if(["profile","orders"].includes(view)&&!currentState.user){view="auth";toast("Please sign in to continue.");}
+ if(view==="admin"&&!currentState.admin){view="admin";renderDenied();}
+ currentState.currentView=view;
+ document.querySelectorAll(".view").forEach(el=>el.classList.toggle("active",el.id===`view-${view}`));
+ document.querySelectorAll("[data-view]").forEach(el=>{if(el.classList.contains("nav-link"))el.classList.toggle("active",el.dataset.view===view)});
+ const navCollapse=$("mainNav");if(navCollapse.classList.contains("show"))bootstrap.Collapse.getOrCreateInstance(navCollapse).hide();
+ if(view==="profile")loadProfileForm();if(view==="orders")startClientOrders();if(view==="admin"&&currentState.admin)startAdminListeners();
+ window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll("[data-view]").forEach(el=>el.addEventListener("click",e=>{e.preventDefault();showView(el.dataset.view)}));
+$("year").textContent=new Date().getFullYear();
+function priceFor(q){return (pricing.find(t=>q>=t.min&&q<=t.max)||pricing[0]).price}
+function calculate(){
+ const q=Math.min(10000,Math.max(1,Math.floor(Number(config.quantity)||1)));config.quantity=q;
+ const base=priceFor(q),vessel=vesselOptions[config.vessel],lid=lidOptions[config.lid],unit=base+vessel.cost+lid.cost,total=unit*q,weight=q*.4;
+ $("quantityInput").value=q;$("summaryQty").textContent=`${q.toLocaleString()} pcs`;$("summaryBase").textContent=fmt(base);
+ $("summaryVessel").textContent=vessel.name;$("summaryScent").textContent=config.scent;$("summaryLid").textContent=lid.name;$("summaryLabel").textContent=config.label==="artwork"?"Custom artwork":"Plain / unlabeled";
+ $("summaryUnit").textContent=fmt(unit);$("summaryWeight").textContent=`${weight.toFixed(1)} kg`;$("summaryTotal").textContent=fmt(total);
+ $("depositText").textContent=`${fmt(total*.5)} deposit estimate`;$("upfrontText").textContent=`${fmt(total)} total due`;
+ [1,2,3,4].forEach(i=>$(`tierBadge${i}`).classList.remove("active"));
+ const tierIndex=q<100?1:q<300?2:q<500?3:4;$(`tierBadge${tierIndex}`).classList.add("active");
+ let hint=q<50?`Retail pricing applies. ${50-q} more pieces unlock wholesale rates.`:q<100?`${100-q} more pieces unlock the ₱200/pc tier.`:q<300?`${300-q} more pieces unlock the ₱180/pc tier.`:q<500?`${500-q} more pieces unlock the ₱150/pc tier.`:"Best value tier unlocked.";
+ $("tierHint").textContent=hint;
+ $("freightText").textContent=weight<20?"Lalamove / Grab delivery estimate: ₱300–₱600. Actual cost depends on route, parcel size, and availability.":"AP Cargo / Capex heavy freight: manual quote verification required. Final freight is not included in the product total.";
+ $("submitOrderBtn").textContent=currentState.user?"Submit production request":"Sign in to submit order";
+ return {quantity:q,baseUnitPrice:base,unitPrice:unit,total,weight};
+}
+$("quantityInput").addEventListener("input",()=>{config.quantity=$("quantityInput").value;calculate()});
+document.querySelectorAll("[data-vessel]").forEach(el=>el.addEventListener("click",()=>{config.vessel=el.dataset.vessel;document.querySelectorAll("[data-vessel]").forEach(n=>n.classList.toggle("selected",n===el));calculate()}));
+document.querySelectorAll("[data-scent]").forEach(el=>el.addEventListener("click",()=>{config.scent=el.dataset.scent;document.querySelectorAll("[data-scent]").forEach(n=>n.classList.toggle("selected",n===el));calculate()}));
+document.querySelectorAll("[data-lid]").forEach(el=>el.addEventListener("click",()=>{config.lid=el.dataset.lid;document.querySelectorAll("[data-lid]").forEach(n=>n.classList.toggle("selected",n===el));calculate()}));
+document.querySelectorAll("[data-label]").forEach(el=>el.addEventListener("click",()=>{config.label=el.dataset.label;document.querySelectorAll("[data-label]").forEach(n=>n.classList.toggle("selected",n===el));$("artworkField").classList.toggle("hidden",config.label!=="artwork");calculate()}));
+document.querySelectorAll("[data-next]").forEach(btn=>btn.addEventListener("click",()=>{config.step=Math.min(4,Math.max(1,config.step+Number(btn.dataset.next)));document.querySelectorAll(".step-panel").forEach(p=>p.classList.toggle("active",p.id===`step${config.step}`));$("stepCount").textContent=`Step ${config.step} of 4`;$("wizardProgress").style.width=`${config.step*25}%`}));
+$("saveQuoteBtn").addEventListener("click",()=>{const totals=calculate();const quote={...config,pricing:totals,createdAt:new Date().toISOString()};try{sessionStorage.setItem("lunaWickQuote",JSON.stringify(quote));toast("Quote saved in this browser session. Sign in to submit it as an order.","success")}catch(e){toast("Could not save quote in this browser session.","error")}});
+$("startCustomizing").addEventListener("click",()=>{config.step=1;document.querySelectorAll(".step-panel").forEach(p=>p.classList.toggle("active",p.id==="step1"))});
+function setAuthMode(mode){const login=mode==="login";$("loginPanel").classList.toggle("hidden",!login);$("registerPanel").classList.toggle("hidden",login);$("showLogin").classList.toggle("btn-terra",login);$("showLogin").classList.toggle("btn-outline-terra",!login);$("showRegister").classList.toggle("btn-terra",!login);$("showRegister").classList.toggle("btn-outline-terra",login)}
+$("showLogin").addEventListener("click",()=>setAuthMode("login"));$("showRegister").addEventListener("click",()=>setAuthMode("register"));
+$("loginForm").addEventListener("submit",async e=>{e.preventDefault();const btn=$("loginBtn");setBusy(btn,true,"Signing in…");try{await signInWithEmailAndPassword(auth,$("loginEmail").value.trim(),$("loginPassword").value);toast("Signed in successfully.","success");showView("marketplace")}catch(err){console.error(err);toast(authMessage(err),"error")}finally{setBusy(btn,false)}});
+$("registerForm").addEventListener("submit",async e=>{e.preventDefault();if(!$("registerForm").reportValidity())return;const btn=$("registerBtn");setBusy(btn,true,"Creating account…");let credential;try{credential=await createUserWithEmailAndPassword(auth,$("regEmail").value.trim(),$("regPassword").value);const profile={email:credential.user.email,fullName:$("regName").value.trim(),companyName:$("regCompany").value.trim(),tin:$("regTin").value.trim(),shippingAddress:$("regAddress").value.trim(),role:"client",createdAt:serverTimestamp()};await setDoc(doc(db,"users",credential.user.uid),profile);profileCache={...profile};toast("Account created. Welcome to Luna Wick Co.!","success");showView("marketplace")}catch(err){console.error(err);if(credential?.user){try{await signOut(auth)}catch(signOutErr){console.error(signOutErr)}}toast(authMessage(err),"error")}finally{setBusy(btn,false)}});
+function authMessage(err){const code=err?.code||"";const messages={"auth/email-already-in-use":"An account already exists for this email.","auth/invalid-email":"Please enter a valid email address.","auth/weak-password":"Choose a stronger password (at least 8 characters).","auth/invalid-credential":"Email or password is incorrect.","auth/user-not-found":"No account was found for this email.","auth/wrong-password":"Email or password is incorrect.","auth/too-many-requests":"Too many attempts. Please wait and try again.","permission-denied":"Permission denied by Firebase Security Rules. Check the deployed rules.","unavailable":"Firebase is temporarily unavailable. Check your connection."};return messages[code]||err?.message||"The request could not be completed."}
+function updateNav(){
+ const logged=!!currentState.user;$("navAuth").classList.toggle("hidden",logged);$("navProfileWrap").classList.toggle("hidden",!logged);$("navOrdersWrap").classList.toggle("hidden",!logged);$("navLogoutWrap").classList.toggle("hidden",!logged);$("navAdminWrap").classList.toggle("hidden",!logged||!currentState.admin);
+}
+onAuthStateChanged(auth,async user=>{
+ currentState.user=user;currentState.profile=null;currentState.admin=false;profileCache=null;
+ if(currentState.orderUnsubscribe){currentState.orderUnsubscribe();currentState.orderUnsubscribe=null}
+ currentState.adminUnsubscribers.forEach(unsub=>unsub());currentState.adminUnsubscribers=[];
+ if(user){try{const snap=await getDoc(doc(db,"users",user.uid));if(snap.exists()){currentState.profile=snap.data();profileCache=snap.data();currentState.admin=currentState.profile.role==="admin"}else{toast("Your account profile is missing. Contact the administrator.","error")}}catch(err){console.error(err);toast("Could not load account permissions. Restricted pages remain unavailable.","error")}}
+ updateNav();if(currentState.currentView==="admin"&&!currentState.admin)renderDenied();if(currentState.currentView==="profile"&&user)loadProfileForm();
+});
+$("logoutBtn").addEventListener("click",async()=>{try{await signOut(auth);toast("You have signed out.","success");showView("marketplace")}catch(err){console.error(err);toast(authMessage(err),"error")}});
+function loadProfileForm(){if(!currentState.user||!currentState.profile)return;const p=currentState.profile;$("profileName").value=p.fullName||"";$("profileCompany").value=p.companyName||"";$("profileTin").value=p.tin||"";$("profileAddress").value=p.shippingAddress||"";$("profileEmail").textContent=`Signed in as ${currentState.user.email||p.email||""}`;}
+$("profileForm").addEventListener("submit",async e=>{e.preventDefault();if(!currentState.user)return showView("auth");const btn=$("saveProfileBtn");setBusy(btn,true,"Saving…");try{const patch={fullName:$("profileName").value.trim(),companyName:$("profileCompany").value.trim(),tin:$("profileTin").value.trim(),shippingAddress:$("profileAddress").value.trim(),email:currentState.user.email};await updateDoc(doc(db,"users",currentState.user.uid),patch);currentState.profile={...currentState.profile,...patch};profileCache=currentState.profile;toast("Profile updated.","success")}catch(err){console.error(err);toast(authMessage(err),"error")}finally{setBusy(btn,false)}});
+$("orderForm").addEventListener("submit",async e=>{
+ e.preventDefault();if(!currentState.user){setAuthMode("login");showView("auth");toast("Sign in or create an account before submitting an order.");return}
+ const form=$("orderForm");if(!form.reportValidity())return;
+ const btn=$("submitOrderBtn");setBusy(btn,true,"Submitting securely…");
+ try{
+  const total=calculate();const p=currentState.profile||{};
+  const company=$("orderCompany").value.trim(),tin=$("orderTin").value.trim(),address=$("orderAddress").value.trim(),contact=$("orderContact").value.trim(),email=$("orderEmail").value.trim();
+  const orderPayload={
+   orderId:"LW-"+Date.now().toString(36).toUpperCase()+"-"+crypto.randomUUID().slice(0,6).toUpperCase(),
+   userId:currentState.user.uid,
+   items:[{productName:"Signature Soy Candle",quantity:total.quantity,vessel:vesselOptions[config.vessel].name,vesselAdjustment:vesselOptions[config.vessel].cost,scent:config.scent,lid:lidOptions[config.lid].name,lidAdjustment:lidOptions[config.lid].cost,label:config.label==="artwork"?"custom_artwork":"plain",baseUnitPrice:total.baseUnitPrice,unitPrice:total.unitPrice,lineTotal:total.total,weightKg:total.weight}],
+   totalPrice:total.total,
+   paymentModel:document.querySelector('input[name="paymentModel"]:checked').value,
+   paymentStatus:"pending_verification",
+   orderStatus:"received",
+   shippingDetails:{companyName:company,tin,shippingAddress:address,contactPerson:contact,contactEmail:email,paymentMethod:document.querySelector('input[name="payMethod"]:checked').value,estimatedWeightKg:total.weight,freightEstimate:total.weight<20?"₱300–₱600; route-dependent":"Manual AP Cargo / Capex quote required"},
+   timestamp:serverTimestamp()
+  };
+  const ref=await addDoc(collection(db,"luna_wick_bulk_orders"),orderPayload);
+  try{await updateDoc(doc(db,"users",currentState.user.uid),{companyName:company,tin,shippingAddress:address,fullName:p.fullName||contact})}catch(profileErr){console.warn("Order submitted but profile sync failed",profileErr)}
+  toast(`Order request received. Reference: ${orderPayload.orderId}`,"success");form.reset();$("orderCompany").value=company;$("orderTin").value=tin;$("orderAddress").value=address;$("orderContact").value=contact;$("orderEmail").value=email;
+  showView("orders");
+ }catch(err){console.error(err);toast(authMessage(err),"error")}finally{setBusy(btn,false);calculate()}
+});
+function startClientOrders(){
+ const target=$("clientOrders");if(!currentState.user){target.innerHTML='<div class="surface text-center py-5">Please sign in to view orders.</div>';return}
+ if(currentState.orderUnsubscribe)currentState.orderUnsubscribe();
+ target.innerHTML='<div class="surface">Loading your orders…</div>';
+ try{
+  const q=query(collection(db,"luna_wick_bulk_orders"),where("userId","==",currentState.user.uid));
+  currentState.orderUnsubscribe=onSnapshot(q,snap=>{const rows=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>timestampMillis(b.timestamp)-timestampMillis(a.timestamp));renderClientOrders(rows)},err=>{console.error(err);target.innerHTML=`<div class="surface">Could not load orders. ${escapeHTML(authMessage(err))}</div>`});
+ }catch(err){console.error(err);target.innerHTML='<div class="surface">Unable to connect to the order tracker.</div>'}
+}
+function timestampMillis(ts){if(ts?.toMillis)return ts.toMillis();if(ts instanceof Date)return ts.getTime();if(typeof ts==="string")return Date.parse(ts)||0;return 0}
+function readableDate(ts){const ms=timestampMillis(ts);return ms?new Date(ms).toLocaleDateString("en-PH",{year:"numeric",month:"short",day:"numeric"}):"Just submitted"}
+function renderClientOrders(rows){
+ const target=$("clientOrders");if(!rows.length){target.innerHTML='<div class="surface text-center py-5"><div class="fs-1">🕯️</div><h2 class="h4 mt-3">No orders yet</h2><p class="small-muted">Your submitted production requests will appear here.</p><button class="btn btn-terra" data-view="marketplace">Build your candle</button></div>';target.querySelector("[data-view]")?.addEventListener("click",()=>showView("marketplace"));return}
+ target.innerHTML=rows.map(o=>{const status=orderStatuses.includes(o.orderStatus)?o.orderStatus:"received";const active=orderStatuses.indexOf(status);const item=(o.items||[])[0]||{};const ship=o.shippingDetails||{};return `<article class="surface mb-3"><div class="d-flex justify-content-between flex-wrap gap-3"><div><div class="eyebrow">${escapeHTML(o.orderId||o.id)}</div><h2 class="h4 mt-2 mb-1">${escapeHTML(item.productName||"Candle order")} · ${Number(item.quantity)||0} pcs</h2><div class="small-muted">Submitted ${readableDate(o.timestamp)}</div></div><div class="text-md-end"><div class="summary-total">${fmt(o.totalPrice)}</div><span class="pill">${escapeHTML((o.paymentStatus||"pending_verification").replaceAll("_"," "))}</span></div></div><hr><div class="row g-4"><div class="col-md-7"><div class="fw-semibold mb-3">Production progress</div>${orderStatuses.map((s,i)=>`<div class="status-step ${i<active?"done":i===active?"current":""}"><div class="status-dot">${i<active?"✓":i+1}</div><div><div class="status-name">${statusLabels[s]}</div><div class="small-muted">${i===active?"Current status":i<active?"Completed":"Awaiting update"}</div></div></div>`).join("")}</div><div class="col-md-5"><div class="fw-semibold mb-2">Order details</div><div class="small-muted mb-2">${escapeHTML(item.vessel||"")} · ${escapeHTML(item.scent||"")} · ${escapeHTML(item.lid||"")}</div><div class="small-muted mb-2">Ship to: ${escapeHTML(ship.shippingAddress||"Address pending")}</div><div class="small-muted">Freight: ${escapeHTML(ship.freightEstimate||"Pending quote")}</div><div class="mt-3"><span class="small-muted">Order status: </span><strong>${statusLabels[status]}</strong></div></div></div></article>`}).join("");
+}
+function renderDenied(){$("adminAccessMessage").innerHTML='<div class="text-danger fw-semibold">Access denied</div><div class="small-muted mt-1">This page is restricted to accounts whose Firestore users document has role = "admin". Frontend visibility is not a security boundary; Firestore Security Rules must enforce the same restriction.</div>';$("adminContent").classList.add("hidden")}
+function startAdminListeners(){
+ if(!currentState.user||!currentState.admin){renderDenied();return}
+ $("adminAccessMessage").innerHTML='<div class="text-sage fw-semibold">Administrator verified</div><div class="small-muted mt-1">Live Firestore data is connected. Updates are subject to Security Rules.</div>';$("adminContent").classList.remove("hidden");
+ if(currentState.adminUnsubscribers.length)return;
+ try{
+  const orderUnsub=onSnapshot(collection(db,"luna_wick_bulk_orders"),snap=>{const orders=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>timestampMillis(b.timestamp)-timestampMillis(a.timestamp));renderAdminOrders(orders)},err=>{console.error(err);$("adminOrdersBody").innerHTML=`<tr><td colspan="6">${escapeHTML(authMessage(err))}</td></tr>`});
+  const userUnsub=onSnapshot(collection(db,"users"),snap=>{const users=snap.docs.map(d=>({id:d.id,...d.data()})).sort((a,b)=>String(a.fullName||"").localeCompare(String(b.fullName||"")));renderAdminUsers(users)},err=>{console.error(err);$("adminUsersBody").innerHTML=`<tr><td colspan="5">${escapeHTML(authMessage(err))}</td></tr>`});
+  currentState.adminUnsubscribers=[orderUnsub,userUnsub];
+ }catch(err){console.error(err);toast("Could not start admin data listeners.","error")}
+}
+function renderAdminOrders(rows){
+ $("adminOrderCount").textContent=rows.length;$("adminPendingCount").textContent=rows.filter(o=>o.paymentStatus==="pending_verification").length;
+ if(!rows.length){$("adminOrdersBody").innerHTML='<tr><td colspan="6" class="text-center small-muted py-4">No orders have been submitted.</td></tr>';return}
+ $("adminOrdersBody").innerHTML=rows.map(o=>{const ship=o.shippingDetails||{};const item=(o.items||[])[0]||{};const status=orderStatuses.includes(o.orderStatus)?o.orderStatus:"received";return `<tr><td><strong>${escapeHTML(o.orderId||o.id)}</strong><div class="small-muted">${readableDate(o.timestamp)}</div></td><td><strong>${escapeHTML(ship.companyName||"—")}</strong><div class="small-muted">TIN: ${escapeHTML(ship.tin||"—")}</div><div class="small-muted">${escapeHTML(ship.contactEmail||"")}</div></td><td>${Number(item.quantity)||0} × ${escapeHTML(item.vessel||"Candle")}<div class="small-muted">${escapeHTML(item.scent||"")}</div></td><td>${fmt(o.totalPrice)}</td><td><span class="pill">${escapeHTML((o.paymentStatus||"unknown").replaceAll("_"," "))}</span><div class="small-muted">${escapeHTML(o.paymentModel||"")}</div></td><td><select class="form-select form-select-sm order-status-select" data-doc="${escapeHTML(o.id)}" aria-label="Update order status">${orderStatuses.map(s=>`<option value="${s}" ${s===status?"selected":""}>${statusLabels[s]}</option>`).join("")}</select></td></tr>`}).join("");
+ $("adminOrdersBody").querySelectorAll(".order-status-select").forEach(select=>select.addEventListener("change",async()=>{const previous=select.dataset.previous||select.querySelector("option[selected]")?.value;select.disabled=true;try{await updateDoc(doc(db,"luna_wick_bulk_orders",select.dataset.doc),{orderStatus:select.value});select.dataset.previous=select.value;toast("Order status updated.","success")}catch(err){console.error(err);toast("Could not update order status: "+authMessage(err),"error");if(previous)select.value=previous}finally{select.disabled=false}}));
+}
+function renderAdminUsers(users){
+ $("adminUserCount").textContent=users.length;if(!users.length){$("adminUsersBody").innerHTML='<tr><td colspan="5" class="text-center small-muted py-4">No customer profiles found.</td></tr>';return}
+ $("adminUsersBody").innerHTML=users.map(u=>`<tr><td><strong>${escapeHTML(u.fullName||"—")}</strong><div class="small-muted">${escapeHTML(u.id)}</div></td><td>${escapeHTML(u.companyName||"—")}</td><td>${escapeHTML(u.tin||"—")}</td><td>${escapeHTML(u.email||"—")}</td><td><span class="pill">${escapeHTML(u.role||"client")}</span></td></tr>`).join("");
+}
+$("refreshAdminBtn").addEventListener("click",()=>{currentState.adminUnsubscribers.forEach(fn=>fn());currentState.adminUnsubscribers=[];startAdminListeners();toast("Refreshing live admin data…")});
+calculate();
+</script>
 </body>
 </html>
